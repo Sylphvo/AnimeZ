@@ -14,9 +14,9 @@ export default function LoginPage() {
   const router = useRouter();
   const { login, isLoading } = useAuth();
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-    rememberMe: false,
+    email: " admin@tailadmin.com",
+    password: "password123",
+    rememberMe: true,
   });
   const [error, setError] = useState("");
 
@@ -73,7 +73,7 @@ export default function LoginPage() {
                   <Input
                     id="email"
                     type="email"
-                    value={formData.email}
+                    value={"admin@tailadmin.com"}
                     onChange={(e) => handleInputChange('email', e.target.value)}
                     placeholder="Nhập địa chỉ email"
                     required
@@ -86,7 +86,7 @@ export default function LoginPage() {
                   <Input
                     id="password"
                     type="password"
-                    value={formData.password}
+                    value={"password123"}
                     onChange={(e) => handleInputChange('password', e.target.value)}
                     placeholder="Nhập mật khẩu"
                     required
@@ -151,7 +151,7 @@ export default function LoginPage() {
         </Card>
 
         {/* Demo Credentials */}
-        <Card className="bg-blue-50 border-blue-200">
+        {/* <Card className="bg-blue-50 border-blue-200">
           <CardContent className="pt-6">
             <div className="text-center">
               <h3 className="text-sm font-medium text-blue-900 mb-2">
@@ -163,7 +163,7 @@ export default function LoginPage() {
               </div>
             </div>
           </CardContent>
-        </Card>
+        </Card> */}
 
         {/* Social Login */}
         <div className="space-y-4">

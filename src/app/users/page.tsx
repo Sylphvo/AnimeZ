@@ -34,7 +34,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { mockUsers, getUserStats } from "@/lib/mock-data";
 import { User } from "@/lib/types";
 
-export default function UsersPage() {
+export default function UsersPage() {  
   const [users, setUsers] = useState<User[]>(mockUsers);
   const [searchTerm, setSearchTerm] = useState("");
   const [deleteUserId, setDeleteUserId] = useState<string | null>(null);
