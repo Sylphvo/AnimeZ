@@ -1907,6 +1907,15 @@ const mockUsers = [
             'TypeScript'
         ],
         other: 'Thích đọc sách công nghệ, chơi game',
+        animePreferences: {
+            favoriteAnimeSeries: 'One Piece',
+            favoriteCharacter: 'Luffy',
+            preferredGenres: [
+                'Action',
+                'Adventure'
+            ],
+            animeWatchingHabits: 'Watches weekly episodes'
+        },
         status: 'active'
     },
     {
@@ -2005,6 +2014,15 @@ const mockUsers = [
             'Analytics'
         ],
         other: 'Yêu thích yoga và thiền',
+        animePreferences: {
+            favoriteAnimeSeries: 'Naruto',
+            favoriteCharacter: 'Sakura',
+            preferredGenres: [
+                'Shounen',
+                'Romance'
+            ],
+            animeWatchingHabits: 'Binge watches on weekends'
+        },
         status: 'active'
     },
     {
@@ -2095,6 +2113,15 @@ const mockUsers = [
             'Prototyping'
         ],
         other: 'Passionate about minimalist design',
+        animePreferences: {
+            favoriteAnimeSeries: 'Attack on Titan',
+            favoriteCharacter: 'Eren',
+            preferredGenres: [
+                'Action',
+                'Drama'
+            ],
+            animeWatchingHabits: 'Watches dubbed versions'
+        },
         status: 'active'
     }
 ];

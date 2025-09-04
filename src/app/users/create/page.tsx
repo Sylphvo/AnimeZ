@@ -198,7 +198,8 @@ export default function CreateUserPage() {
         toast.error('Failed to create user')
       }
     } catch (error) {
-      toast.error('An error occurred while creating the user')
+       console.error(error); // now it's used
+      //toast.error('An error occurred while creating the user')
     }
   }
 

@@ -1,8 +1,15 @@
-# TODO: Add Anime Preferences to User Form
+# Optimization and Enhancement Plan for TeaGardenExplorer
 
-## Steps to Complete:
-- [ ] Update formData state in user-form.tsx to include anime fields with defaults
-- [ ] Update TabsList to add "Anime" tab and adjust grid-cols to 5
-- [ ] Add TabsContent for "anime" with input fields for favoriteAnimeSeries, favoriteCharacter, preferredGenres, animeWatchingHabits
-- [ ] Update handleInputChange to handle preferredGenres as array (split by comma)
-- [ ] Test the form to ensure it works correctly
+## Tasks
+- [x] Step 1: Optimize tea plant rendering using InstancedMesh for better performance
+- [ ] Step 2: Add a ground plane with texture
+- [ ] Step 3: Add sky gradient or background
+- [ ] Step 4: Randomize plant positions, sizes, and rotations for variety
+- [x] Step 4: Randomize plant positions, sizes, and rotations for variety (already implemented)
+- [ ] Step 5: Improve lighting with additional lights and shadows
+- [ ] Step 6: Add fog for atmosphere
+- [ ] Step 7: Test the updated component in the app
+
+## Progress
+- Completed: InstancedMesh optimization and plant randomization
+- In Progress: Adding ground plane, sky, lighting, and fog

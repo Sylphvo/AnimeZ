@@ -98,6 +98,12 @@ export const mockUsers: User[] = [
     ],
     skills: ['JavaScript', 'React', 'Node.js', 'TypeScript'],
     other: 'Thích đọc sách công nghệ, chơi game',
+    animePreferences: {
+      favoriteAnimeSeries: 'One Piece',
+      favoriteCharacter: 'Luffy',
+      preferredGenres: ['Action', 'Adventure'],
+      animeWatchingHabits: 'Watches weekly episodes',
+    },
     status: 'active',
   },
   {
@@ -191,6 +197,12 @@ export const mockUsers: User[] = [
     ],
     skills: ['Product Management', 'Agile', 'Scrum', 'Analytics'],
     other: 'Yêu thích yoga và thiền',
+    animePreferences: {
+      favoriteAnimeSeries: 'Naruto',
+      favoriteCharacter: 'Sakura',
+      preferredGenres: ['Shounen', 'Romance'],
+      animeWatchingHabits: 'Binge watches on weekends',
+    },
     status: 'active',
   },
   {
@@ -276,6 +288,12 @@ export const mockUsers: User[] = [
     ],
     skills: ['UI/UX Design', 'Figma', 'Adobe Creative Suite', 'Prototyping'],
     other: 'Passionate about minimalist design',
+    animePreferences: {
+      favoriteAnimeSeries: 'Attack on Titan',
+      favoriteCharacter: 'Eren',
+      preferredGenres: ['Action', 'Drama'],
+      animeWatchingHabits: 'Watches dubbed versions',
+    },
     status: 'active',
   },
 ];
