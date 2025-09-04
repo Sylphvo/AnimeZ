@@ -6,6 +6,7 @@
     "dev": "cross-env PORT=8001 next dev --turbopack",
     "build": "next build",
     "start": "next start",
+    "server": "node server.js",
     "lint": "next lint"
   },
   "dependencies": {
@@ -51,6 +52,7 @@
     "react-hook-form": "^7.62.0",
     "react-resizable-panels": "^3.0.1",
     "recharts": "^2.15.3",
+    "selfsigned": "^3.0.1",
     "sonner": "^2.0.3",
     "tailwind-merge": "^3.2.0",
     "vaul": "^1.1.2",

@@ -68,6 +68,12 @@ export interface User {
   }[];
   skills: string[];
   other: string;
+  animePreferences: {
+    favoriteAnimeSeries: string;
+    favoriteCharacter: string;
+    preferredGenres: string[];
+    animeWatchingHabits: string;
+  };
   status: 'active' | 'inactive' | 'suspended';
 }
 
@@ -106,6 +112,10 @@ export interface UserFormData {
   privacy: 'public' | 'private';
   walletBalance: number;
   walletCurrency: string;
+  favoriteAnimeSeries: string;
+  favoriteCharacter: string;
+  preferredGenres: string[];
+  animeWatchingHabits: string;
 }
 
 export interface AttendanceRecord {
@@ -174,4 +184,35 @@ export interface SessionConfig {
   rememberMeExpiration: number; // in milliseconds
   inactivityTimeout: number; // in milliseconds
   warningBeforeExpiry: number; // in milliseconds
+}
+
+// Product Management Types
+export interface Product {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  category: string;
+  imageUrl?: string;
+  stock: number;
+  isActive: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface ProductFormData {
+  name: string;
+  description: string;
+  price: number;
+  category: string;
+  imageUrl?: string;
+  stock: number;
+  isActive: boolean;
+}
+
+export interface ProductCategory {
+  id: string;
+  name: string;
+  description?: string;
+  isActive: boolean;
 }

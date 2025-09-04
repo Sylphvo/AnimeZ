@@ -14,6 +14,7 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Textarea } from "@/components/ui/textarea";
 import { UserFormData } from "@/lib/types";
 
 interface UserFormProps {
@@ -50,6 +51,10 @@ export function UserForm({ initialData, onSubmit, onCancel, isEditing = false }:
     theme: initialData?.theme || "light",
     notifications: initialData?.notifications || true,
     privacy: initialData?.privacy || "public",
+    favoriteAnimeSeries: initialData?.favoriteAnimeSeries || "",
+    favoriteCharacter: initialData?.favoriteCharacter || "",
+    preferredGenres: initialData?.preferredGenres || [],
+    animeWatchingHabits: initialData?.animeWatchingHabits || "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -67,11 +72,12 @@ export function UserForm({ initialData, onSubmit, onCancel, isEditing = false }:
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <Tabs defaultValue="personal" className="w-full">
-        <TabsList className="grid w-full grid-cols-4">
+        <TabsList className="grid w-full grid-cols-5">
           <TabsTrigger value="personal">Thông tin cá nhân</TabsTrigger>
           <TabsTrigger value="account">Tài khoản</TabsTrigger>
           <TabsTrigger value="work">Công việc</TabsTrigger>
           <TabsTrigger value="settings">Cài đặt</TabsTrigger>
+          <TabsTrigger value="anime">Anime</TabsTrigger>
         </TabsList>
 
         <TabsContent value="personal" className="space-y-4">
@@ -309,6 +315,55 @@ export function UserForm({ initialData, onSubmit, onCancel, isEditing = false }:
                     </SelectContent>
                   </Select>
                 </div>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="anime" className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>Anime Preferences</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="favoriteAnimeSeries">Favorite Anime Series</Label>
+                <Input
+                  id="favoriteAnimeSeries"
+                  value={formData.favoriteAnimeSeries}
+                  onChange={(e) => handleInputChange('favoriteAnimeSeries', e.target.value)}
+                  placeholder="Enter your favorite anime series"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="favoriteCharacter">Favorite Character</Label>
+                <Input
+                  id="favoriteCharacter"
+                  value={formData.favoriteCharacter}
+                  onChange={(e) => handleInputChange('favoriteCharacter', e.target.value)}
+                  placeholder="Enter your favorite character"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="preferredGenres">Preferred Genres</Label>
+                <Textarea
+                  id="preferredGenres"
+                  value={formData.preferredGenres.join(', ')}
+                  onChange={(e) => handleInputChange('preferredGenres', e.target.value.split(',').map(g => g.trim()).filter(g => g))}
+                  placeholder="Enter preferred genres separated by commas"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="animeWatchingHabits">Anime Watching Habits</Label>
+                <Textarea
+                  id="animeWatchingHabits"
+                  value={formData.animeWatchingHabits}
+                  onChange={(e) => handleInputChange('animeWatchingHabits', e.target.value)}
+                  placeholder="Describe your anime watching habits"
+                />
               </div>
             </CardContent>
           </Card>
