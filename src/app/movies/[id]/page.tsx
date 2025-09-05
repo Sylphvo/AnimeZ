@@ -49,9 +49,9 @@ type TabType = 'overview' | 'cast' | 'trailers' | 'related';
 
 
 const MovieDetail = () => {
-  const router = useRouter();
+  //const router = useRouter();
   const params = useParams();
-  const id = params.id;
+  //const id = params.id;
 
   const [activeTab, setActiveTab] = useState<TabType>('overview');
 
@@ -111,10 +111,10 @@ const MovieDetail = () => {
 
 
 
-  const handleWatchMovie = (): void => {
-    // Logic xem phim
-    console.log('Watch movie:', movieData.title);
-  };
+  // const handleWatchMovie = (): void => {
+  //   // Logic xem phim
+  //   console.log('Watch movie:', movieData.title);
+  // };
 
   const handleAddToList = (): void => {
     // Logic thêm vào danh sách
