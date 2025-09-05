@@ -13,7 +13,10 @@ export function MovieCard({ title, description, imageUrl }: MovieCardProps) {
         <Image
           src={imageUrl}
           alt={title}
-          className="w-full h-48 object-cover"
+          width={300}
+          height={200}
+          unoptimized
+          //className="w-full h-48 object-cover"
         />
       </CardHeader>
       <CardContent className="p-4">

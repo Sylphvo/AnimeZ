@@ -1,7 +1,5 @@
 {
-  "/3d/page": "app/3d/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/calendar/page": "app/calendar/page.js",
-  "/page": "app/page.js",
-  "/users/page": "app/users/page.js"
+  "/movies/page": "app/movies/page.js",
+  "/page": "app/page.js"
 }
