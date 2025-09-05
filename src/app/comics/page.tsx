@@ -1,8 +1,8 @@
 'use client';
 import React, { useState } from 'react';
-import { Star, Eye, Heart, BookOpen, Calendar, Tag, User, Search, Bell, Menu
-    
+import { Star, Eye, BookOpen, Calendar, Tag, User, Search, Bell, Menu
  } from 'lucide-react';
+import Image from 'next/image';
 
 interface Comic {
   id: string;
@@ -20,7 +20,7 @@ interface Comic {
 
 const ComicPage: React.FC = () => {
   const [selectedGenre, setSelectedGenre] = useState<string | null>(null);
-
+  console.log(selectedGenre);
   // Mock data for comics
   const featuredComics: Comic[] = [
     {
@@ -65,7 +65,7 @@ const ComicPage: React.FC = () => {
     {
       id: '4',
       title: 'Attack on Titan',
-      image: '/api/placeholder/200/280',
+      image: '/assets/card/200x280.png',
       rating: 4.6,
       views: '1.5M',
       status: 'completed',
@@ -74,7 +74,7 @@ const ComicPage: React.FC = () => {
     {
       id: '5',
       title: 'My Hero Academia',
-      image: '/api/placeholder/200/280',
+      image: '/assets/card/200x280.png',
       rating: 4.5,
       views: '890K',
       status: 'ongoing',
@@ -83,7 +83,7 @@ const ComicPage: React.FC = () => {
     {
       id: '6',
       title: 'Tokyo Ghoul',
-      image: '/api/placeholder/200/280',
+      image: '/assets/card/200x280.png',
       rating: 4.4,
       views: '750K',
       status: 'completed',
@@ -92,7 +92,7 @@ const ComicPage: React.FC = () => {
     {
       id: '7',
       title: 'Death Note',
-      image: '/api/placeholder/200/280',
+      image: '/assets/card/200x280.png',
       rating: 4.8,
       views: '1.1M',
       status: 'completed',
@@ -104,7 +104,7 @@ const ComicPage: React.FC = () => {
     {
       id: '8',
       title: 'Chainsaw Man',
-      image: '/api/placeholder/180/240',
+      image: '/assets/card/180x240.png',
       rating: 4.3,
       views: '560K',
       status: 'ongoing',
@@ -113,7 +113,7 @@ const ComicPage: React.FC = () => {
     {
       id: '9',
       title: 'Jujutsu Kaisen',
-      image: '/api/placeholder/180/240',
+      image: '/assets/card/180x240.png',
       rating: 4.6,
       views: '780K',
       status: 'ongoing',
@@ -122,7 +122,7 @@ const ComicPage: React.FC = () => {
     {
       id: '10',
       title: 'Spy x Family',
-      image: '/api/placeholder/180/240',
+      image: '/assets/card/180x240.png',
       rating: 4.7,
       views: '650K',
       status: 'ongoing',
@@ -131,7 +131,7 @@ const ComicPage: React.FC = () => {
     {
       id: '11',
       title: 'Black Clover',
-      image: '/api/placeholder/180/240',
+      image: '/assets/card/180x240.png',
       rating: 4.2,
       views: '420K',
       status: 'ongoing',
@@ -140,7 +140,7 @@ const ComicPage: React.FC = () => {
     {
       id: '12',
       title: 'Dr. Stone',
-      image: '/api/placeholder/180/240',
+      image: '/assets/card/180x240.png',
       rating: 4.4,
       views: '380K',
       status: 'completed',
@@ -149,7 +149,7 @@ const ComicPage: React.FC = () => {
     {
       id: '13',
       title: 'Mob Psycho 100',
-      image: '/api/placeholder/180/240',
+      image: '/assets/card/180x240.png',
       rating: 4.5,
       views: '310K',
       status: 'completed',
@@ -193,7 +193,7 @@ const ComicPage: React.FC = () => {
     return (
       <div className={`${sizeClasses[size]} bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer group`}>
         <div className="relative">
-          <img
+          <Image
             src={comic.image}
             alt={comic.title}
             className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"

@@ -61,7 +61,7 @@ const MovieWatchPage = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [showControls, setShowControls] = useState(true);
   const [newComment, setNewComment] = useState('');
-
+  console.log(isFullscreen);
   // Sample data
   const movieData: MovieWatchData = {
     id: 1,

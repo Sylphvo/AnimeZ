@@ -297,19 +297,19 @@ export default function TeaGardenExplorer() {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       switch (event.code) {
-        case 'KeyW':
+        case 'KeyS':
         case 'ArrowUp':
           movementRef.current.forward = true
           break
-        case 'KeyS':
+        case 'KeyW':
         case 'ArrowDown':
           movementRef.current.backward = true
           break
-        case 'KeyA':
+        case 'KeyD':
         case 'ArrowLeft':
           movementRef.current.left = true
           break
-        case 'KeyD':
+        case 'KeyA':
         case 'ArrowRight':
           movementRef.current.right = true
           break
@@ -328,19 +328,19 @@ export default function TeaGardenExplorer() {
 
     const handleKeyUp = (event: KeyboardEvent) => {
       switch (event.code) {
-        case 'KeyW':
+        case 'KeyS':
         case 'ArrowUp':
           movementRef.current.forward = false
           break
-        case 'KeyS':
+        case 'KeyW':
         case 'ArrowDown':
           movementRef.current.backward = false
           break
-        case 'KeyA':
+        case 'KeyD':
         case 'ArrowLeft':
           movementRef.current.left = false
           break
-        case 'KeyD':
+        case 'KeyA':
         case 'ArrowRight':
           movementRef.current.right = false
           break

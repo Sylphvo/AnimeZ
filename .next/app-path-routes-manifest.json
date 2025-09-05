@@ -1,0 +1,23 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/api/movies/route": "/api/movies",
+  "/api/welcome/route": "/api/welcome",
+  "/3d/page": "/3d",
+  "/calendar/page": "/calendar",
+  "/comics/[id]/page": "/comics/[id]",
+  "/demo/page": "/demo",
+  "/comics/page": "/comics",
+  "/enhanced/page": "/enhanced",
+  "/forgot-password/page": "/forgot-password",
+  "/login/page": "/login",
+  "/movies/[id]/page": "/movies/[id]",
+  "/movies/page": "/movies",
+  "/page": "/",
+  "/users/[id]/page": "/users/[id]",
+  "/users/page": "/users",
+  "/signup/page": "/signup",
+  "/users/new/page": "/users/new",
+  "/users/[id]/edit/page": "/users/[id]/edit",
+  "/users/create/page": "/users/create",
+  "/watch/[id]/page": "/watch/[id]"
+}

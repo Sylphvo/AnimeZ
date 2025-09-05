@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useParams, useRouter } from 'next/navigation';
+//import { useParams } from 'next/navigation';
 
 
 // Type definitions
@@ -50,7 +50,7 @@ type TabType = 'overview' | 'cast' | 'trailers' | 'related';
 
 const MovieDetail = () => {
   //const router = useRouter();
-  const params = useParams();
+  //const params = useParams();
   //const id = params.id;
 
   const [activeTab, setActiveTab] = useState<TabType>('overview');

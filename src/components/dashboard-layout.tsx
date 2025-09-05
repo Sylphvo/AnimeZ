@@ -13,7 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Badge } from "@/components/ui/badge";
+//import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/lib/auth";
 import { SessionStatus } from "@/components/session-status";
 
@@ -34,10 +34,20 @@ const sidebarItems = [
     indent: true,
   },
   {
+    label: "Demo",
+    href: "/demo",
+    active: false,
+  },
+  {
+    label: "Enhanced",
+    href: "/enhanced",
+    active: false,
+  },
+  {
     label: "Quản lý User",
     href: "/users",
-    active: false,
-    badge: "NEW",
+    active: false
+    //badge: "NEW",
   },
   {
     label: "Phim",
@@ -197,11 +207,11 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
               } ${item.indent ? 'ml-4' : ''}`}
             >
               <span className={sidebarCollapsed ? 'sr-only' : ''}>{item.label}</span>
-              {item.badge && !sidebarCollapsed && (
+              {/* {item.badge && !sidebarCollapsed && (
                 <Badge variant="secondary" className="text-xs bg-green-100 text-green-700">
                   {item.badge}
                 </Badge>
-              )}
+              )} */}
             </a>
           ))}
         </nav>

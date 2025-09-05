@@ -39,7 +39,7 @@ interface MovieSection {
 const MoviesPage = () => {
   const [currentBanner, setCurrentBanner] = useState(0);
   const [selectedGenre, setSelectedGenre] = useState('Tất cả');
-
+  console.log(currentBanner);
   // Featured banner
   const featuredBanner: Banner = {
     id: 1,

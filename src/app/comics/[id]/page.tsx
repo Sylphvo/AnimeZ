@@ -5,13 +5,8 @@ import {
   Eye, 
   Heart, 
   BookOpen, 
-  Calendar, 
-  Tag, 
-  User, 
   Search, 
   Bell, 
-  Menu,
-  Clock,
   MessageCircle,
   ThumbsUp,
   Share2,
@@ -19,9 +14,9 @@ import {
   Play,
   ChevronLeft,
   ChevronRight,
-  Filter,
-  Download
+  Filter
 } from 'lucide-react';
+import Image from 'next/image';
 
 interface Chapter {
   id: string;
@@ -250,7 +245,7 @@ const ComicDetailPage: React.FC = () => {
               <div className="flex flex-col md:flex-row gap-6">
                 {/* Cover Image */}
                 <div className="flex-shrink-0">
-                  <img
+                  <Image
                     src={comicDetail.image}
                     alt={comicDetail.title}
                     className="w-64 h-80 object-cover rounded-lg shadow-lg"
@@ -469,7 +464,7 @@ const ComicDetailPage: React.FC = () => {
                   <div className="space-y-6">
                     {comments.map((comment) => (
                       <div key={comment.id} className="flex space-x-4 p-4 bg-slate-700/30 rounded-lg">
-                        <img
+                        <Image
                           src={comment.avatar}
                           alt={comment.user}
                           className="w-10 h-10 rounded-full"
@@ -508,7 +503,7 @@ const ComicDetailPage: React.FC = () => {
               <div className="space-y-4">
                 {relatedComics.map((comic) => (
                   <div key={comic.id} className="flex space-x-3 p-3 bg-slate-700/30 rounded-lg hover:bg-slate-700/50 cursor-pointer transition-colors">
-                    <img
+                    <Image
                       src={comic.image}
                       alt={comic.title}
                       className="w-16 h-20 object-cover rounded"
