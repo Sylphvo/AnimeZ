@@ -65,6 +65,16 @@ const sidebarItems = [
     active: false,
     indent: true,
   },
+  {
+    label: "3D Model Viewer",
+    href: "/3d",
+    active: false,
+  },
+  {
+    label: "3D Model",
+    href: "/3d",
+    active: false,
+  },
   // {
   //   label: "Analytics",
   //   href: "/analytics",

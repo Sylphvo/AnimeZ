@@ -31,6 +31,22 @@
       "namedRegex": "^/movies/(?<nxtPid>[^/]+?)(?:/)?$"
     },
     {
+      "page": "/readcomic/[id]",
+      "regex": "^/readcomic/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/readcomic/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/readcomic_vertical/[id]",
+      "regex": "^/readcomic_vertical/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/readcomic_vertical/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
       "page": "/users/[id]",
       "regex": "^/users/([^/]+?)(?:/)?$",
       "routeKeys": {
