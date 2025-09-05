@@ -1,4 +1,4 @@
-# Mobile Responsiveness Fix for Dashboard Layout
+# Mobile Responsiveness Fix Progress
 
 - [ ] Modify sidebar to be hidden on mobile (sm and below), add overlay when open
 - [ ] Add mobile menu toggle button in header

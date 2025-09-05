@@ -69,12 +69,7 @@ const sidebarItems = [
     label: "3D Model Viewer",
     href: "/3d",
     active: false,
-  },
-  {
-    label: "3D Model",
-    href: "/3d",
-    active: false,
-  },
+  },  
   // {
   //   label: "Analytics",
   //   href: "/analytics",
@@ -155,6 +150,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
   const router = useRouter();
   const { user, logout, isAuthenticated } = useAuth();
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -173,8 +169,16 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
 
   return (
     <div className="flex h-screen bg-gray-50">
+      {/* Mobile Overlay */}
+      {mobileSidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+          onClick={() => setMobileSidebarOpen(false)}
+        />
+      )}
+
       {/* Sidebar */}
-      <div className={`bg-white border-r border-gray-200 transition-all duration-300 ${sidebarCollapsed ? 'w-16' : 'w-64'}`}>
+      <div className={`bg-white border-r border-gray-200 transition-all duration-300 ${sidebarCollapsed ? 'w-16' : 'w-64'} hidden md:block ${mobileSidebarOpen ? 'fixed md:relative z-50 md:z-auto inset-y-0 left-0 block' : ''}`}>
         {/* Logo */}
         <div className="flex items-center justify-between p-4 border-b border-gray-200">
           <div className="flex items-center space-x-2">
