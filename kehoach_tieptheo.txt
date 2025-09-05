@@ -1,77 +1,78 @@
 từ mô hình 3D dùng thư viện react-three-fiber có thể thêm những thứ như sau
-	+ viết trò chơi cờ caro : cho 2 user. mỗi user là 1 nhân vật 	
-	+ đánh bida 
-    :
+        + viết trò chơi cờ caro : cho 2 user. mỗi user là 1 nhân vật 	
+        + đánh bida 
+        🔹 1. Chơi 2 người trên cùng một máy (local multiplayer)
+        Mỗi người điều khiển 1 con rắn bằng bộ phím khác nhau:
+        Người 1: Arrow keys (↑ ↓ ← →).
+        Người 2: WASD.
+        Render 2 con rắn (mỗi con 1 màu khác nhau).
+        Khi rắn chạm nhau → game over cho 1 bên.
+        👉 Cách làm:
+        Thêm state snake1, snake2, dir1, dir2.
+        Mỗi con rắn update độc lập nhưng chia sẻ chung một "world".
+        🔹 2. Chơi 2 người qua mạng (online multiplayer)
+        Cần backend để đồng bộ state game:
+        Khi user1 di chuyển → gửi hướng lên server.
+        Server cập nhật trạng thái (vị trí rắn, thức ăn, điểm).
+        User2 nhận update từ server.
+        Công nghệ có thể dùng:
+        WebSocket (Socket.IO, SignalR).
+        .NET Core API (nếu bạn theo stack trước kia) + WebSocket để realtime.
+        👉 Với cách này, mỗi user mở game ở máy khác nhau vẫn có thể cùng chơi chung.
+        1. Thêm mô hình người
+        Bạn cần mô hình nhân vật 3D (ví dụ: file GLTF/GLB).
+        Có thể lấy miễn phí trên các site như:
+        Mixamo
+        (nhân vật + animation).
+        Sketchfab
+        Sau đó load mô hình vào scene bằng useGLTF (từ thư viện @react-three/drei):
+        2. Thêm thời trang (quần áo, phụ kiện)
+        Có 2 cách:
+        Layer mô hình: bạn có thể import thêm các mô hình quần áo, phụ kiện (mũ, áo, giày), rồi gắn vào nhân vật.
+        Material/Texture thay đổi: nếu mô hình nhân vật có nhiều "material slot" (áo, quần, giày tách riêng) thì bạn có thể đổi màu, texture để làm thời trang.
+        Ví dụ thay áo thành màu đỏ:
+        scene.getObjectByName("ShirtMesh").material.color.set("red");
+        3. Cho nhân vật di chuyển
+        Bạn có thể điều khiển nhân vật bằng WASD giống như game 3D.
+        Hoặc gắn animation Mixamo (đi bộ, chạy, idle).
+        4. Tích hợp với game Snake
+        Thay vì chỉ có rắn → giờ có thêm nhân vật Player đứng trong bản đồ.
+        Bạn có thể cho nhân vật đi lại, hoặc làm "skin người + thời trang" để hiển thị trong game (kiểu Snake nhưng điều khiển người).
 
-🔹 1. Chơi 2 người trên cùng một máy (local multiplayer)
+Mẹo khi dùng Code First:
+Dùng Migration: luôn tạo migration sau mỗi thay đổi model (Add-Migration + Update-Database).
+Thiết kế entity chuẩn: quan hệ 1-1, 1-n, n-n rõ ràng ngay từ đầu.
+Seed data nếu cần dữ liệu mặc định.
+Nếu DB sau này quá lớn → có thể chuyển sang Database First để maintain.
 
-Mỗi người điều khiển 1 con rắn bằng bộ phím khác nhau:
+trong tab user thêm 1 trang con 
+	+ thu chi:
+		+ thống kê ngày hiện tại theo dữ liệu.
+		
+		+ tổng thu hôm nay
+			- chọn tag (lấy từ các tag mà mình đã thêm ở trang profile) 
+		+ tổng chi hôm nay
+			- chọn tag (lấy từ các tag mà mình đã thêm ở trang profile) 
+		+ ăn uống:
+			- chọn tag (lấy từ các tag mà mình đã thêm ở trang profile) 
+thêm 1 trang quản lý danh sách phim
+thêm 1 trang quản lý truyện 
+thêm 1 trang báo mới
+	+ gọi api từ https://news.ycombinator.com/
+thêm 1 trang đánh giá 
+	+ đánh giá về quẩn áo 
+	+ đánh giá về các sản phầm mình có thể mua 
+	+ đánh giá khách sạn du lịch
+thêm 1 trang học về các kĩ năng lập trình
+	+ thêm trang con: làm bài kiểm tra
+thêm 1 trang học ngôn ngữ
+thêm 1 trang về nhạc
+thêm 1 trang chat với AI
+thêm 1 trang test chức năng ở các màn hình : trang này sẽ là dạng bảng và các button phía sau sẽ là các chứ năng
 
-Người 1: Arrow keys (↑ ↓ ← →).
-
-Người 2: WASD.
-
-Render 2 con rắn (mỗi con 1 màu khác nhau).
-
-Khi rắn chạm nhau → game over cho 1 bên.
-
-👉 Cách làm:
-
-Thêm state snake1, snake2, dir1, dir2.
-
-Mỗi con rắn update độc lập nhưng chia sẻ chung một "world".
+trong trang profile user:
+	quản lý tài sản 
+	level => level vô hạn: thu thập exp thông qua các bài kiểm tra và chỉ số sức khỏe là số dương 
 
 
-🔹 2. Chơi 2 người qua mạng (online multiplayer)
-
-Cần backend để đồng bộ state game:
-
-Khi user1 di chuyển → gửi hướng lên server.
-
-Server cập nhật trạng thái (vị trí rắn, thức ăn, điểm).
-
-User2 nhận update từ server.
-
-Công nghệ có thể dùng:
-
-WebSocket (Socket.IO, SignalR).
-
-.NET Core API (nếu bạn theo stack trước kia) + WebSocket để realtime.
-
-👉 Với cách này, mỗi user mở game ở máy khác nhau vẫn có thể cùng chơi chung.
-1. Thêm mô hình người
-
-Bạn cần mô hình nhân vật 3D (ví dụ: file GLTF/GLB).
-
-Có thể lấy miễn phí trên các site như:
-
-Mixamo
- (nhân vật + animation).
-
-Sketchfab
-.
-
-Sau đó load mô hình vào scene bằng useGLTF (từ thư viện @react-three/drei):
-2. Thêm thời trang (quần áo, phụ kiện)
-
-Có 2 cách:
-
-Layer mô hình: bạn có thể import thêm các mô hình quần áo, phụ kiện (mũ, áo, giày), rồi gắn vào nhân vật.
-
-Material/Texture thay đổi: nếu mô hình nhân vật có nhiều "material slot" (áo, quần, giày tách riêng) thì bạn có thể đổi màu, texture để làm thời trang.
-
-Ví dụ thay áo thành màu đỏ:
-
-scene.getObjectByName("ShirtMesh").material.color.set("red");
-
-3. Cho nhân vật di chuyển
-
-Bạn có thể điều khiển nhân vật bằng WASD giống như game 3D.
-
-Hoặc gắn animation Mixamo (đi bộ, chạy, idle).
-
-4. Tích hợp với game Snake
-
-Thay vì chỉ có rắn → giờ có thêm nhân vật Player đứng trong bản đồ.
-
-Bạn có thể cho nhân vật đi lại, hoặc làm "skin người + thời trang" để hiển thị trong game (kiểu Snake nhưng điều khiển người).
+** Dynamic các thành phần trong trang web, màu sắc.
