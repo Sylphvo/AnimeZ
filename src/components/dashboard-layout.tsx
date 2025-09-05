@@ -34,79 +34,101 @@ const sidebarItems = [
     indent: true,
   },
   {
-    label: "Analytics",
-    href: "/analytics",
-    active: false,
-  },
-  {
-    label: "Marketing",
-    href: "/marketing",
-    active: false,
-  },
-  {
-    label: "CRM",
-    href: "/crm",
-    active: false,
-  },
-  {
-    label: "Stocks",
-    href: "/stocks",
-    active: false,
-  },
-  {
-    label: "SaaS",
-    href: "/saas",
-    active: false,
-    badge: "NEW",
-  },
-  {
-    label: "Logistics",
-    href: "/logistics",
-    active: false,
-    badge: "NEW",
-  },
-  {
-    label: "AI Assistant",
-    href: "/ai-assistant",
-    active: false,
-    badge: "NEW",
-  },
-  {
-    label: "E-commerce",
-    href: "/e-commerce",
-    active: false,
-    badge: "NEW",
-  },
-  {
-    label: "Calendar",
-    href: "/calendar",
-    active: false,
-  },
-  {
-    label: "User Profile",
+    label: "Quản lý User",
     href: "/users",
     active: false,
+    badge: "NEW",
   },
   {
-    label: "Task",
-    href: "/task",
+    label: "Phim",
+    href: "/movies",
     active: false,
   },
   {
-    label: "Forms",
-    href: "/forms",
+    label: "Truyện",
+    href: "/comics",
     active: false,
   },
   {
-    label: "Tables",
-    href: "/tables",
+    label: "Truyện chữ",
+    href: "/ecommerce",
     active: false,
+    indent: true,
   },
-  {
-    label: "Pages",
-    href: "/pages",
-    active: false,
-  },
+  // {
+  //   label: "Analytics",
+  //   href: "/analytics",
+  //   active: false,
+  // },
+  // {
+  //   label: "Marketing",
+  //   href: "/marketing",
+  //   active: false,
+  // },
+  // {
+  //   label: "CRM",
+  //   href: "/crm",
+  //   active: false,
+  // },
+  // {
+  //   label: "Stocks",
+  //   href: "/stocks",
+  //   active: false,
+  // },
+  // {
+  //   label: "SaaS",
+  //   href: "/saas",
+  //   active: false,
+  //   badge: "NEW",
+  // },
+  // {
+  //   label: "Logistics",
+  //   href: "/logistics",
+  //   active: false,
+  //   badge: "NEW",
+  // },
+  // {
+  //   label: "AI Assistant",
+  //   href: "/ai-assistant",
+  //   active: false,
+  //   badge: "NEW",
+  // },
+  // {
+  //   label: "E-commerce",
+  //   href: "/e-commerce",
+  //   active: false,
+  //   badge: "NEW",
+  // },
+  // {
+  //   label: "Calendar",
+  //   href: "/calendar",
+  //   active: false,
+  // },
+  // {
+  //   label: "User Profile",
+  //   href: "/users",
+  //   active: false,
+  // },
+  // {
+  //   label: "Task",
+  //   href: "/task",
+  //   active: false,
+  // },
+  // {
+  //   label: "Forms",
+  //   href: "/forms",
+  //   active: false,
+  // },
+  // {
+  //   label: "Tables",
+  //   href: "/tables",
+  //   active: false,
+  // },
+  // {
+  //   label: "Pages",
+  //   href: "/pages",
+  //   active: false,
+  // },
 ];
 
 export function DashboardLayout({ children }: DashboardLayoutProps) {
