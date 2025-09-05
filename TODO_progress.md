@@ -1,7 +1,6 @@
 # Mobile Responsiveness Fix Progress
 
-- [ ] Modify sidebar to be hidden on mobile (sm and below), add overlay when open
-- [ ] Add mobile menu toggle button in header
-- [ ] Adjust header layout: search full width on mobile, compact user menu
-- [ ] Add responsive classes for breakpoints
-- [ ] Test layout on mobile viewports
+- [ ] Hide user name in header on mobile screens to save space
+- [ ] Ensure sidebar is properly responsive with correct breakpoints
+- [ ] Add any missing responsive classes for better mobile experience
+- [ ] Test the layout on mobile viewports using browser

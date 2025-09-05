@@ -39,6 +39,14 @@ từ mô hình 3D dùng thư viện react-three-fiber có thể thêm những th
         Thay vì chỉ có rắn → giờ có thêm nhân vật Player đứng trong bản đồ.
         Bạn có thể cho nhân vật đi lại, hoặc làm "skin người + thời trang" để hiển thị trong game (kiểu Snake nhưng điều khiển người).
 
+🔹 Tên gọi phổ biến
+Dynamic Menu Management – Quản lý menu động
+Cho phép thêm/sửa/xóa menu và menu con ngay trên dashboard.
+Sidebar/Menu Editor – Trình chỉnh sửa sidebar/menu
+Giao diện trực quan để quản trị menu, thường kéo thả hoặc form.
+Navigation Management – Quản lý điều hướng
+Nhấn mạnh menu là công cụ điều hướng trong ứng dụng.
+
 Mẹo khi dùng Code First:
 Dùng Migration: luôn tạo migration sau mỗi thay đổi model (Add-Migration + Update-Database).
 Thiết kế entity chuẩn: quan hệ 1-1, 1-n, n-n rõ ràng ngay từ đầu.
