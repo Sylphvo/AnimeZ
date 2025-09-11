@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Maximize, Minimize, RotateCcw, Home, BookOpen, Settings } from 'lucide-react';
-
+import Image from 'next/image';
 interface MangaPage {
   id: number;
   imageUrl: string;
@@ -207,7 +207,7 @@ const MangaReader: React.FC = () => {
             {/* Manga Page Display */}
             <div className="flex justify-center items-center min-h-[70vh] p-4">
               {readingMode === 'single' ? (
-                <img
+                <Image
                   src={mangaPages[currentPage].imageUrl}
                   alt={mangaPages[currentPage].alt}
                   className="max-w-full max-h-full object-contain transition-transform duration-200"

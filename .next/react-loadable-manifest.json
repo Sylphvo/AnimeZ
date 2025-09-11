@@ -1,1 +1,32 @@
-{}
+{
+  "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_app": {
+    "id": 472,
+    "files": [
+      "static/chunks/472.a3826d29d6854395.js"
+    ]
+  },
+  "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_error": {
+    "id": 9341,
+    "files": [
+      "static/chunks/9341.3de5922501c09e3c.js"
+    ]
+  },
+  "components\\TeaGardenExplorer.tsx -> cannon-es": {
+    "id": 1381,
+    "files": [
+      "static/chunks/ef4d719b.ecda2d465f00d1a6.js"
+    ]
+  },
+  "components\\TeaGardenExplorer.tsx -> three/examples/jsm/loaders/GLTFLoader": {
+    "id": 9311,
+    "files": [
+      "static/chunks/9311.0eac38f31c3e16d1.js"
+    ]
+  },
+  "components\\characters\\loadCharacter.ts -> three/examples/jsm/loaders/GLTFLoader": {
+    "id": 9311,
+    "files": [
+      "static/chunks/9311.0eac38f31c3e16d1.js"
+    ]
+  }
+}
