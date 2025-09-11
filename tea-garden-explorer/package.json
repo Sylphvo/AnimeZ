@@ -1,0 +1,33 @@
+{
+  "name": "tea-garden-explorer",
+  "version": "1.0.0",
+  "description": "A 3D tea garden exploration experience using Three.js.",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "three": "^0.136.0",
+    "cannon-es": "^0.22.0",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^12.0.7",
+    "typescript": "^4.5.4"
+  },
+  "keywords": [
+    "three.js",
+    "next.js",
+    "3d",
+    "exploration",
+    "tea garden"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
