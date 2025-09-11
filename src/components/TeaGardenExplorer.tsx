@@ -169,10 +169,11 @@ export default function TeaGardenExplorer() {
     return instancedMesh
   }, [])
 
-  // Ground plane creation
+  // Ground plane creation (keep a subtle ground but not dominating grass)
   const createGround = useCallback((materials: any) => {
     const geometry = new THREE.PlaneGeometry(CHUNK_SIZE * 2, CHUNK_SIZE * 2)
-    const ground = new THREE.Mesh(geometry, materials.grass)
+    // use mossyGrass/stone instead of bright grass
+    const ground = new THREE.Mesh(geometry, materials.mossyGrass || materials.grass)
     ground.rotation.x = -Math.PI / 2
     ground.receiveShadow = true
     return ground
@@ -254,9 +255,16 @@ export default function TeaGardenExplorer() {
     const textures = createTextures()
     const materials = createMaterials(textures)
 
-    // Add ground
     const ground = createGround(materials)
     scene.add(ground)
+
+    // Add trees instead of dense grass/tea plant field
+    const treesGroup = createTrees(materials, 80, CHUNK_SIZE) // adjust count as needed
+    scene.add(treesGroup)
+
+    // Optional: keep some small shrubs as instanced meshes
+    // const teaBushes = createTeaPlants(materials)
+    // scene.add(teaBushes)
 
     // Add sky
     const sky = createSky()
@@ -271,6 +279,10 @@ export default function TeaGardenExplorer() {
     // Add tea plants
     const teaPlants = createTeaPlants(materials)
     scene.add(teaPlants)
+
+    // Add trees
+    const trees = createTrees(materials, 60, CHUNK_SIZE)
+    scene.add(trees)
 
     setIsLoading(false)
 
@@ -449,4 +461,43 @@ export default function TeaGardenExplorer() {
       </div>
     </div>
   )
+}
+
+// Tree creation (replaces the dense grass area)
+const createTrees = (materials: any, count = 60, chunkSize = 50) => {
+  const group = new THREE.Group()
+  const trunkGeo = new THREE.CylinderGeometry(0.18, 0.25, 2, 8)
+  const coneGeo1 = new THREE.ConeGeometry(1.2, 2, 8)
+  const coneGeo2 = new THREE.ConeGeometry(0.8, 1.4, 8)
+
+  for (let i = 0; i < count; i++) {
+    const tree = new THREE.Group()
+
+    const trunk = new THREE.Mesh(trunkGeo, materials.trunk)
+    trunk.position.y = 1
+    trunk.castShadow = true
+    trunk.receiveShadow = true
+    tree.add(trunk)
+
+    const leaves1 = new THREE.Mesh(coneGeo1, materials.teaPlant)
+    leaves1.position.y = 2.2
+    leaves1.castShadow = true
+    tree.add(leaves1)
+
+    const leaves2 = new THREE.Mesh(coneGeo2, materials.teaPlant)
+    leaves2.position.y = 3.1
+    leaves2.castShadow = true
+    tree.add(leaves2)
+
+    const x = (Math.random() - 0.5) * chunkSize * 2
+    const z = (Math.random() - 0.5) * chunkSize * 2
+    tree.position.set(x, 0, z)
+    tree.rotation.y = Math.random() * Math.PI * 2
+    const s = 0.8 + Math.random() * 0.8
+    tree.scale.set(s, s, s)
+
+    group.add(tree)
+  }
+
+  return group
 }
