@@ -75,7 +75,23 @@ const sidebarItems = [
     label: "3D Model Viewer",
     href: "/3d",
     active: false,
-  },  
+  },
+  {
+    label: "Database Manager",
+    active: false,
+  },
+  {
+    label: "database",
+    href: "/database/database",
+    active: false,
+    indent: true,
+  },
+  {
+    label: "table",
+    href: "/database/table",
+    active: false,
+    indent: true,
+  },
   // {
   //   label: "Analytics",
   //   href: "/analytics",

@@ -983,6 +983,22 @@ const sidebarItems = [
         label: "3D Model Viewer",
         href: "/3d",
         active: false
+    },
+    {
+        label: "Database Manager",
+        active: false
+    },
+    {
+        label: "database",
+        href: "/database/database",
+        active: false,
+        indent: true
+    },
+    {
+        label: "table",
+        href: "/database/table",
+        active: false,
+        indent: true
     }
 ];
 function DashboardLayout({ children }) {
@@ -1013,7 +1029,7 @@ function DashboardLayout({ children }) {
                 onClick: ()=>setMobileSidebarOpen(false)
             }, void 0, false, {
                 fileName: "[project]/src/components/dashboard-layout.tsx",
-                lineNumber: 180,
+                lineNumber: 196,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1032,12 +1048,12 @@ function DashboardLayout({ children }) {
                                             children: "T"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/dashboard-layout.tsx",
-                                            lineNumber: 192,
+                                            lineNumber: 208,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/dashboard-layout.tsx",
-                                        lineNumber: 191,
+                                        lineNumber: 207,
                                         columnNumber: 13
                                     }, this),
                                     !sidebarCollapsed && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1045,13 +1061,13 @@ function DashboardLayout({ children }) {
                                         children: "TailAdmin"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/dashboard-layout.tsx",
-                                        lineNumber: 195,
+                                        lineNumber: 211,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/dashboard-layout.tsx",
-                                lineNumber: 190,
+                                lineNumber: 206,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1071,23 +1087,23 @@ function DashboardLayout({ children }) {
                                         d: "M4 6h16M4 12h16M4 18h16"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/dashboard-layout.tsx",
-                                        lineNumber: 205,
+                                        lineNumber: 221,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard-layout.tsx",
-                                    lineNumber: 204,
+                                    lineNumber: 220,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/dashboard-layout.tsx",
-                                lineNumber: 198,
+                                lineNumber: 214,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/dashboard-layout.tsx",
-                        lineNumber: 189,
+                        lineNumber: 205,
                         columnNumber: 9
                     }, this),
                     !sidebarCollapsed && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1097,12 +1113,12 @@ function DashboardLayout({ children }) {
                             children: "MENU"
                         }, void 0, false, {
                             fileName: "[project]/src/components/dashboard-layout.tsx",
-                            lineNumber: 213,
+                            lineNumber: 229,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/dashboard-layout.tsx",
-                        lineNumber: 212,
+                        lineNumber: 228,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -1115,29 +1131,29 @@ function DashboardLayout({ children }) {
                                     children: item.label
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard-layout.tsx",
-                                    lineNumber: 229,
+                                    lineNumber: 245,
                                     columnNumber: 15
                                 }, this)
                             }, index, false, {
                                 fileName: "[project]/src/components/dashboard-layout.tsx",
-                                lineNumber: 220,
+                                lineNumber: 236,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/components/dashboard-layout.tsx",
-                        lineNumber: 218,
+                        lineNumber: 234,
                         columnNumber: 9
                     }, this),
                     !sidebarCollapsed && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "p-4 border-t border-gray-200",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$session$2d$status$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SessionStatus"], {}, void 0, false, {
                             fileName: "[project]/src/components/dashboard-layout.tsx",
-                            lineNumber: 242,
+                            lineNumber: 258,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/dashboard-layout.tsx",
-                        lineNumber: 241,
+                        lineNumber: 257,
                         columnNumber: 11
                     }, this),
                     !sidebarCollapsed && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1147,18 +1163,18 @@ function DashboardLayout({ children }) {
                             children: "SUPPORT"
                         }, void 0, false, {
                             fileName: "[project]/src/components/dashboard-layout.tsx",
-                            lineNumber: 249,
+                            lineNumber: 265,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/dashboard-layout.tsx",
-                        lineNumber: 248,
+                        lineNumber: 264,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/dashboard-layout.tsx",
-                lineNumber: 187,
+                lineNumber: 203,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1186,17 +1202,17 @@ function DashboardLayout({ children }) {
                                             d: "M4 6h16M4 12h16M4 18h16"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/dashboard-layout.tsx",
-                                            lineNumber: 267,
+                                            lineNumber: 283,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/dashboard-layout.tsx",
-                                        lineNumber: 266,
+                                        lineNumber: 282,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard-layout.tsx",
-                                    lineNumber: 260,
+                                    lineNumber: 276,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1210,7 +1226,7 @@ function DashboardLayout({ children }) {
                                                 className: "pl-10 pr-4 py-2 w-full"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                lineNumber: 274,
+                                                lineNumber: 290,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1227,17 +1243,17 @@ function DashboardLayout({ children }) {
                                                         d: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                        lineNumber: 281,
+                                                        lineNumber: 297,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                    lineNumber: 280,
+                                                    lineNumber: 296,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                lineNumber: 279,
+                                                lineNumber: 295,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1247,23 +1263,23 @@ function DashboardLayout({ children }) {
                                                     children: "⌘K"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                    lineNumber: 285,
+                                                    lineNumber: 301,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                lineNumber: 284,
+                                                lineNumber: 300,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/dashboard-layout.tsx",
-                                        lineNumber: 273,
+                                        lineNumber: 289,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/dashboard-layout.tsx",
-                                    lineNumber: 272,
+                                    lineNumber: 288,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1285,17 +1301,17 @@ function DashboardLayout({ children }) {
                                                     d: "M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                    lineNumber: 297,
+                                                    lineNumber: 313,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                lineNumber: 296,
+                                                lineNumber: 312,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/dashboard-layout.tsx",
-                                            lineNumber: 295,
+                                            lineNumber: 311,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1315,25 +1331,25 @@ function DashboardLayout({ children }) {
                                                         d: "M15 17h5l-5 5v-5zM10.07 2.82l3.93 3.93-3.93 3.93-3.93-3.93 3.93-3.93z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                        lineNumber: 304,
+                                                        lineNumber: 320,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                    lineNumber: 303,
+                                                    lineNumber: 319,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                    lineNumber: 306,
+                                                    lineNumber: 322,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/dashboard-layout.tsx",
-                                            lineNumber: 302,
+                                            lineNumber: 318,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenu"], {
@@ -1352,20 +1368,20 @@ function DashboardLayout({ children }) {
                                                                         alt: user?.name || "User"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                                        lineNumber: 314,
+                                                                        lineNumber: 330,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                                         children: user?.name?.charAt(0) || "U"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                                        lineNumber: 315,
+                                                                        lineNumber: 331,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                                lineNumber: 313,
+                                                                lineNumber: 329,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1373,7 +1389,7 @@ function DashboardLayout({ children }) {
                                                                 children: user?.name || "User"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                                lineNumber: 317,
+                                                                lineNumber: 333,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -1388,23 +1404,23 @@ function DashboardLayout({ children }) {
                                                                     d: "M19 9l-7 7-7-7"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                                    lineNumber: 319,
+                                                                    lineNumber: 335,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                                lineNumber: 318,
+                                                                lineNumber: 334,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                        lineNumber: 312,
+                                                        lineNumber: 328,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                    lineNumber: 311,
+                                                    lineNumber: 327,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
@@ -1415,38 +1431,38 @@ function DashboardLayout({ children }) {
                                                             children: "My Account"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                            lineNumber: 324,
+                                                            lineNumber: 340,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuSeparator"], {}, void 0, false, {
                                                             fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                            lineNumber: 325,
+                                                            lineNumber: 341,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
                                                             children: "Profile"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                            lineNumber: 326,
+                                                            lineNumber: 342,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
                                                             children: "Settings"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                            lineNumber: 327,
+                                                            lineNumber: 343,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
                                                             children: "Support"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                            lineNumber: 328,
+                                                            lineNumber: 344,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuSeparator"], {}, void 0, false, {
                                                             fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                            lineNumber: 329,
+                                                            lineNumber: 345,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
@@ -1454,36 +1470,36 @@ function DashboardLayout({ children }) {
                                                             children: "Log out"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                            lineNumber: 330,
+                                                            lineNumber: 346,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/dashboard-layout.tsx",
-                                                    lineNumber: 323,
+                                                    lineNumber: 339,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/dashboard-layout.tsx",
-                                            lineNumber: 310,
+                                            lineNumber: 326,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/dashboard-layout.tsx",
-                                    lineNumber: 293,
+                                    lineNumber: 309,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/dashboard-layout.tsx",
-                            lineNumber: 258,
+                            lineNumber: 274,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/dashboard-layout.tsx",
-                        lineNumber: 257,
+                        lineNumber: 273,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -1491,19 +1507,19 @@ function DashboardLayout({ children }) {
                         children: children
                     }, void 0, false, {
                         fileName: "[project]/src/components/dashboard-layout.tsx",
-                        lineNumber: 338,
+                        lineNumber: 354,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/dashboard-layout.tsx",
-                lineNumber: 255,
+                lineNumber: 271,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/dashboard-layout.tsx",
-        lineNumber: 177,
+        lineNumber: 193,
         columnNumber: 5
     }, this);
 }
@@ -1767,17 +1783,16 @@ async function importAll(payload) {
     }
 }
 }}),
-"[project]/src/app/movies/list/page.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
+"[project]/src/app/database/table/page.tsx [app-ssr] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
 var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.s({
-    "default": (()=>MovieAdminPage)
+    "default": (()=>DatabaseTablesPage)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$dashboard$2d$layout$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/dashboard-layout.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/clientDB.ts [app-ssr] (ecmascript)");
 'use client';
@@ -1785,1579 +1800,671 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts
 ;
 ;
 ;
-;
-const SAMPLE_MOVIES = [
-    {
-        id: 'one-piece-movie',
-        title: 'One Piece: The Grand Adventure',
-        originalTitle: 'ワンピース：グランドアドベンチャー',
-        year: 2022,
-        durationMinutes: 112,
-        director: 'Hiroaki Takahashi',
-        genres: [
-            'Action',
-            'Adventure',
-            'Fantasy'
-        ],
-        country: 'Japan',
-        language: 'Japanese',
-        poster: '/posters/one-piece.jpg',
-        status: 'published',
-        createdAt: '2023-01-15',
-        rating: 8.2,
-        description: 'A new adventure with the Straw Hat crew.'
-    },
-    {
-        id: 'spirited-away-remastered',
-        title: 'Spirited Away (Remastered)',
-        originalTitle: '千と千尋の神隠し',
-        year: 2001,
-        durationMinutes: 125,
-        director: 'Hayao Miyazaki',
-        genres: [
-            'Animation',
-            'Fantasy'
-        ],
-        country: 'Japan',
-        language: 'Japanese',
-        poster: '/posters/spirited-away.jpg',
-        status: 'published',
-        createdAt: '2021-11-02',
-        rating: 9.1,
-        description: 'A young girl enters a world of spirits and magic.'
-    },
-    {
-        id: 'robot-express',
-        title: 'Robot Express',
-        originalTitle: 'Robot Express',
-        year: 2019,
-        durationMinutes: 98,
-        director: 'A. Director',
-        genres: [
-            'Sci-Fi'
-        ],
-        country: 'USA',
-        language: 'English',
-        poster: '/posters/robot-express.jpg',
-        status: 'draft',
-        createdAt: '2024-03-12',
-        rating: 7.0,
-        description: 'A small robot tries to save its city.'
-    },
-    {
-        id: 'cesium-man',
-        title: 'Cesium Man',
-        originalTitle: 'Cesium Man',
-        year: 2018,
-        durationMinutes: 105,
-        director: 'Studio X',
-        genres: [
-            'Drama',
-            'Action'
-        ],
-        country: 'USA',
-        language: 'English',
-        poster: '/posters/cesium-man.jpg',
-        status: 'archived',
-        createdAt: '2020-06-20',
-        rating: 6.5,
-        description: 'An experimental film about identity.'
-    },
-    {
-        id: 'cesium-man',
-        title: 'Cesium Man',
-        originalTitle: 'Cesium Man',
-        year: 2018,
-        durationMinutes: 105,
-        director: 'Studio X',
-        genres: [
-            'Drama',
-            'Action'
-        ],
-        country: 'USA',
-        language: 'English',
-        poster: '/posters/cesium-man.jpg',
-        status: 'archived',
-        createdAt: '2020-06-20',
-        rating: 6.5,
-        description: 'An experimental film about identity.'
-    },
-    {
-        id: 'cesium-man',
-        title: 'Cesium Man',
-        originalTitle: 'Cesium Man',
-        year: 2018,
-        durationMinutes: 105,
-        director: 'Studio X',
-        genres: [
-            'Drama',
-            'Action'
-        ],
-        country: 'USA',
-        language: 'English',
-        poster: '/posters/cesium-man.jpg',
-        status: 'archived',
-        createdAt: '2020-06-20',
-        rating: 6.5,
-        description: 'An experimental film about identity.'
-    },
-    {
-        id: 'cesium-man',
-        title: 'Cesium Man',
-        originalTitle: 'Cesium Man',
-        year: 2018,
-        durationMinutes: 105,
-        director: 'Studio X',
-        genres: [
-            'Drama',
-            'Action'
-        ],
-        country: 'USA',
-        language: 'English',
-        poster: '/posters/cesium-man.jpg',
-        status: 'archived',
-        createdAt: '2020-06-20',
-        rating: 6.5,
-        description: 'An experimental film about identity.'
-    },
-    {
-        id: 'cesium-man',
-        title: 'Cesium Man',
-        originalTitle: 'Cesium Man',
-        year: 2018,
-        durationMinutes: 105,
-        director: 'Studio X',
-        genres: [
-            'Drama',
-            'Action'
-        ],
-        country: 'USA',
-        language: 'English',
-        poster: '/posters/cesium-man.jpg',
-        status: 'archived',
-        createdAt: '2020-06-20',
-        rating: 6.5,
-        description: 'An experimental film about identity.'
-    },
-    {
-        id: 'cesium-man',
-        title: 'Cesium Man',
-        originalTitle: 'Cesium Man',
-        year: 2018,
-        durationMinutes: 105,
-        director: 'Studio X',
-        genres: [
-            'Drama',
-            'Action'
-        ],
-        country: 'USA',
-        language: 'English',
-        poster: '/posters/cesium-man.jpg',
-        status: 'archived',
-        createdAt: '2020-06-20',
-        rating: 6.5,
-        description: 'An experimental film about identity.'
-    },
-    {
-        id: 'cesium-man',
-        title: 'Cesium Man',
-        originalTitle: 'Cesium Man',
-        year: 2018,
-        durationMinutes: 105,
-        director: 'Studio X',
-        genres: [
-            'Drama',
-            'Action'
-        ],
-        country: 'USA',
-        language: 'English',
-        poster: '/posters/cesium-man.jpg',
-        status: 'archived',
-        createdAt: '2020-06-20',
-        rating: 6.5,
-        description: 'An experimental film about identity.'
-    },
-    {
-        id: 'cesium-man',
-        title: 'Cesium Man',
-        originalTitle: 'Cesium Man',
-        year: 2018,
-        durationMinutes: 105,
-        director: 'Studio X',
-        genres: [
-            'Drama',
-            'Action'
-        ],
-        country: 'USA',
-        language: 'English',
-        poster: '/posters/cesium-man.jpg',
-        status: 'archived',
-        createdAt: '2020-06-20',
-        rating: 6.5,
-        description: 'An experimental film about identity.'
-    },
-    {
-        id: 'cesium-man',
-        title: 'Cesium Man',
-        originalTitle: 'Cesium Man',
-        year: 2018,
-        durationMinutes: 105,
-        director: 'Studio X',
-        genres: [
-            'Drama',
-            'Action'
-        ],
-        country: 'USA',
-        language: 'English',
-        poster: '/posters/cesium-man.jpg',
-        status: 'archived',
-        createdAt: '2020-06-20',
-        rating: 6.5,
-        description: 'An experimental film about identity.'
-    },
-    {
-        id: 'cesium-man',
-        title: 'Cesium Man',
-        originalTitle: 'Cesium Man',
-        year: 2018,
-        durationMinutes: 105,
-        director: 'Studio X',
-        genres: [
-            'Drama',
-            'Action'
-        ],
-        country: 'USA',
-        language: 'English',
-        poster: '/posters/cesium-man.jpg',
-        status: 'archived',
-        createdAt: '2020-06-20',
-        rating: 6.5,
-        description: 'An experimental film about identity.'
-    },
-    {
-        id: 'cesium-man',
-        title: 'Cesium Man',
-        originalTitle: 'Cesium Man',
-        year: 2018,
-        durationMinutes: 105,
-        director: 'Studio X',
-        genres: [
-            'Drama',
-            'Action'
-        ],
-        country: 'USA',
-        language: 'English',
-        poster: '/posters/cesium-man.jpg',
-        status: 'archived',
-        createdAt: '2020-06-20',
-        rating: 6.5,
-        description: 'An experimental film about identity.'
-    },
-    {
-        id: 'cesium-man',
-        title: 'Cesium Man',
-        originalTitle: 'Cesium Man',
-        year: 2018,
-        durationMinutes: 105,
-        director: 'Studio X',
-        genres: [
-            'Drama',
-            'Action'
-        ],
-        country: 'USA',
-        language: 'English',
-        poster: '/posters/cesium-man.jpg',
-        status: 'archived',
-        createdAt: '2020-06-20',
-        rating: 6.5,
-        description: 'An experimental film about identity.'
-    },
-    {
-        id: 'cesium-man',
-        title: 'Cesium Man',
-        originalTitle: 'Cesium Man',
-        year: 2018,
-        durationMinutes: 105,
-        director: 'Studio X',
-        genres: [
-            'Drama',
-            'Action'
-        ],
-        country: 'USA',
-        language: 'English',
-        poster: '/posters/cesium-man.jpg',
-        status: 'archived',
-        createdAt: '2020-06-20',
-        rating: 6.5,
-        description: 'An experimental film about identity.'
-    }
-];
-function StatCard({ title, value, hint }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "bg-white rounded-lg shadow p-4",
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "text-sm text-slate-500",
-                children: title
-            }, void 0, false, {
-                fileName: "[project]/src/app/movies/list/page.tsx",
-                lineNumber: 287,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "mt-2 text-2xl font-semibold text-slate-900",
-                children: value
-            }, void 0, false, {
-                fileName: "[project]/src/app/movies/list/page.tsx",
-                lineNumber: 288,
-                columnNumber: 7
-            }, this),
-            hint && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "text-xs text-green-500 mt-1",
-                children: hint
-            }, void 0, false, {
-                fileName: "[project]/src/app/movies/list/page.tsx",
-                lineNumber: 289,
-                columnNumber: 16
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "[project]/src/app/movies/list/page.tsx",
-        lineNumber: 286,
-        columnNumber: 5
-    }, this);
-}
-/** Form component for add/edit */ function MovieForm({ initial, onSave, onCancel }) {
-    const [form, setForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(initial ?? {});
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        setForm(initial ?? {});
-    }, [
-        initial
-    ]);
-    function update(k, v) {
-        setForm((prev)=>({
-                ...prev,
-                [k]: v
-            }));
-    }
-    async function submit(e) {
-        e?.preventDefault();
-        const id = form.id ?? `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-        const record = {
-            id,
-            title: form.title || form.originalTitle || 'Untitled',
-            originalTitle: form.originalTitle,
-            year: form.year ? Number(form.year) : undefined,
-            durationMinutes: form.durationMinutes ? Number(form.durationMinutes) : undefined,
-            director: form.director,
-            genres: typeof form.genres === 'string' ? form.genres.split(',').map((s)=>s.trim()) : form.genres ?? [],
-            country: form.country,
-            language: form.language,
-            poster: form.poster,
-            status: form.status ?? 'draft',
-            createdAt: form.createdAt,
-            rating: form.rating,
-            description: form.description
-        };
-        await onSave(record);
-    }
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "fixed inset-0 z-50 flex items-center justify-center bg-black/40",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-            onSubmit: submit,
-            className: "w-full max-w-2xl bg-white rounded shadow p-6",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex items-center justify-between mb-4",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                            className: "text-lg font-medium",
-                            children: "Thông tin phim"
-                        }, void 0, false, {
-                            fileName: "[project]/src/app/movies/list/page.tsx",
-                            lineNumber: 340,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            type: "button",
-                            onClick: onCancel,
-                            className: "text-sm text-slate-600",
-                            children: "Đóng"
-                        }, void 0, false, {
-                            fileName: "[project]/src/app/movies/list/page.tsx",
-                            lineNumber: 341,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/src/app/movies/list/page.tsx",
-                    lineNumber: 339,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "grid grid-cols-2 gap-3",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    className: "text-xs text-slate-600",
-                                    children: "Tiêu đề gốc"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 346,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    value: form.originalTitle ?? '',
-                                    onChange: (e)=>update('originalTitle', e.target.value),
-                                    className: "mt-1 w-full px-3 py-2 border rounded text-sm"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 347,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/app/movies/list/page.tsx",
-                            lineNumber: 345,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    className: "text-xs text-slate-600",
-                                    children: "Tiêu đề"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 350,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    value: form.title ?? '',
-                                    onChange: (e)=>update('title', e.target.value),
-                                    className: "mt-1 w-full px-3 py-2 border rounded text-sm"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 351,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/app/movies/list/page.tsx",
-                            lineNumber: 349,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    className: "text-xs text-slate-600",
-                                    children: "Năm"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 355,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    type: "number",
-                                    value: form.year ?? '',
-                                    onChange: (e)=>update('year', e.target.value ? Number(e.target.value) : undefined),
-                                    className: "mt-1 w-full px-3 py-2 border rounded text-sm"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 356,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/app/movies/list/page.tsx",
-                            lineNumber: 354,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    className: "text-xs text-slate-600",
-                                    children: "Thời lượng (phút)"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 360,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    type: "number",
-                                    value: form.durationMinutes ?? '',
-                                    onChange: (e)=>update('durationMinutes', e.target.value ? Number(e.target.value) : undefined),
-                                    className: "mt-1 w-full px-3 py-2 border rounded text-sm"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 361,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/app/movies/list/page.tsx",
-                            lineNumber: 359,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    className: "text-xs text-slate-600",
-                                    children: "Đạo diễn"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 365,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    value: form.director ?? '',
-                                    onChange: (e)=>update('director', e.target.value),
-                                    className: "mt-1 w-full px-3 py-2 border rounded text-sm"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 366,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/app/movies/list/page.tsx",
-                            lineNumber: 364,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    className: "text-xs text-slate-600",
-                                    children: "Thể loại (phân cách bằng ,)"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 370,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    value: Array.isArray(form.genres) ? form.genres.join(', ') : form.genres ?? '',
-                                    onChange: (e)=>update('genres', e.target.value),
-                                    className: "mt-1 w-full px-3 py-2 border rounded text-sm"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 371,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/app/movies/list/page.tsx",
-                            lineNumber: 369,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    className: "text-xs text-slate-600",
-                                    children: "Quốc gia"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 375,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    value: form.country ?? '',
-                                    onChange: (e)=>update('country', e.target.value),
-                                    className: "mt-1 w-full px-3 py-2 border rounded text-sm"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 376,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/app/movies/list/page.tsx",
-                            lineNumber: 374,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    className: "text-xs text-slate-600",
-                                    children: "Ngôn ngữ"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 380,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    value: form.language ?? '',
-                                    onChange: (e)=>update('language', e.target.value),
-                                    className: "mt-1 w-full px-3 py-2 border rounded text-sm"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 381,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/app/movies/list/page.tsx",
-                            lineNumber: 379,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "col-span-2",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    className: "text-xs text-slate-600",
-                                    children: "Poster URL"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 385,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                    value: form.poster ?? '',
-                                    onChange: (e)=>update('poster', e.target.value),
-                                    className: "mt-1 w-full px-3 py-2 border rounded text-sm"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 386,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/app/movies/list/page.tsx",
-                            lineNumber: 384,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "col-span-2",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                    className: "text-xs text-slate-600",
-                                    children: "Mô tả ngắn"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 390,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
-                                    value: form.description ?? '',
-                                    onChange: (e)=>update('description', e.target.value),
-                                    className: "mt-1 w-full px-3 py-2 border rounded text-sm",
-                                    rows: 3
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                    lineNumber: 391,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/app/movies/list/page.tsx",
-                            lineNumber: 389,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/src/app/movies/list/page.tsx",
-                    lineNumber: 344,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "mt-4 flex justify-end gap-2",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            type: "button",
-                            onClick: onCancel,
-                            className: "px-4 py-2 rounded border text-sm",
-                            children: "Hủy"
-                        }, void 0, false, {
-                            fileName: "[project]/src/app/movies/list/page.tsx",
-                            lineNumber: 397,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            type: "submit",
-                            className: "px-4 py-2 bg-blue-600 text-white rounded text-sm",
-                            children: "Lưu"
-                        }, void 0, false, {
-                            fileName: "[project]/src/app/movies/list/page.tsx",
-                            lineNumber: 398,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/src/app/movies/list/page.tsx",
-                    lineNumber: 396,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/app/movies/list/page.tsx",
-            lineNumber: 338,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
-        fileName: "[project]/src/app/movies/list/page.tsx",
-        lineNumber: 337,
-        columnNumber: 5
-    }, this);
-}
-function MovieAdminPageContent() {
-    const [movies, setMovies] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
+function DatabaseTablesPage() {
+    const [store, setStore] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('films');
+    const [items, setItems] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [query, setQuery] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
-    const [deletingId, setDeletingId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
-    // form state
-    const [showForm, setShowForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [editing, setEditing] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
-    // pagination state
     const [page, setPage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(1);
     const [perPage, setPerPage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(10);
-    // reset page when filter changes
+    const [editingJson, setEditingJson] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [editingId, setEditingId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [busy, setBusy] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        setPage(1);
+        load();
     }, [
-        query,
-        perPage
+        store
     ]);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        // load from IndexedDB client-side; seed with SAMPLE_MOVIES if empty
-        let mounted = true;
-        (async ()=>{
-            try {
-                const films = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getAllFilms"])();
-                if (!mounted) return;
-                if (!films || films.length === 0) {
-                    // seed and reload
-                    await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["seedFilms"])(SAMPLE_MOVIES.map((m)=>({
-                            id: m.id,
-                            title_original: m.originalTitle ?? m.title,
-                            title_local: m.title,
-                            year: m.year,
-                            country: m.country,
-                            language_primary: m.language,
-                            director: m.director,
-                            producers: null,
-                            main_cast: null,
-                            genre: m.genres,
-                            duration_seconds: m.durationMinutes ? m.durationMinutes * 60 : undefined,
-                            synopsis_short: m.description,
-                            poster: m.poster,
-                            status: m.status,
-                            created_at: m.createdAt
-                        })));
-                }
-                const after = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getAllFilms"])();
-                if (!mounted) return;
-                // map records to Movie shape used by UI
-                setMovies(after.map((f)=>({
-                        id: f.id,
-                        title: f.title_local ?? f.title_original,
-                        originalTitle: f.title_original,
-                        year: f.year ?? undefined,
-                        durationMinutes: f.duration_seconds ? Math.round(f.duration_seconds / 60) : undefined,
-                        director: f.director,
-                        genres: Array.isArray(f.genre) ? f.genre : typeof f.genre === 'string' && f.genre ? [
-                            f.genre
-                        ] : [],
-                        country: f.country,
-                        language: f.language_primary,
-                        poster: f.poster ?? undefined,
-                        status: f.status,
-                        createdAt: f.created_at,
-                        rating: f.rating ? Number(f.rating) : undefined,
-                        description: f.synopsis_short ?? f.synopsis_long
-                    })));
-            } catch (err) {
-                setError(err?.message || 'Failed to load movies');
-            } finally{
-                if (mounted) setLoading(false);
-            }
-        })();
-        return ()=>{
-            mounted = false;
-        };
-    }, []);
-    async function reloadList() {
-        const after = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getAllFilms"])();
-        setMovies(after.map((f)=>({
-                id: f.id,
-                title: f.title_local ?? f.title_original,
-                originalTitle: f.title_original,
-                year: f.year ?? undefined,
-                durationMinutes: f.duration_seconds ? Math.round(f.duration_seconds / 60) : undefined,
-                director: f.director,
-                genres: Array.isArray(f.genre) ? f.genre : typeof f.genre === 'string' && f.genre ? [
-                    f.genre
-                ] : [],
-                country: f.country,
-                language: f.language_primary,
-                poster: f.poster ?? undefined,
-                status: f.status,
-                createdAt: f.created_at,
-                rating: f.rating ? Number(f.rating) : undefined,
-                description: f.synopsis_short ?? f.synopsis_long
-            })));
-    }
-    async function handleDelete(id) {
-        if (!confirm('Xác nhận xoá phim này?')) return;
-        setDeletingId(id);
+    async function load() {
+        setLoading(true);
+        setError(null);
         try {
-            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["deleteFilm"])(id);
-            setMovies((prev)=>prev.filter((m)=>m.id !== id));
+            if (store === 'films') {
+                const all = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getAllFilms"])();
+                setItems(all);
+            } else {
+                const all = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getAllCategories"])();
+                setItems(all);
+            }
+            setPage(1);
         } catch (err) {
-            alert('Xoá thất bại: ' + (err?.message || 'unknown'));
+            setError(err?.message || 'Load failed');
         } finally{
-            setDeletingId(null);
+            setLoading(false);
         }
     }
+    async function handleDelete(id) {
+        if (!confirm('Xác nhận xoá?')) return;
+        setBusy(true);
+        try {
+            if (store === 'films') await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["deleteFilm"])(id);
+            else await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["deleteCategory"])(id);
+            await load();
+        } catch (err) {
+            alert('Xoá thất bại');
+        } finally{
+            setBusy(false);
+        }
+    }
+    function openEdit(rec) {
+        setEditingId(rec.id ?? null);
+        setEditingJson(JSON.stringify(rec, null, 2));
+    }
     function openNew() {
-        setEditing(null);
-        setShowForm(true);
-    }
-    async function openEdit(id) {
-        const rec = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getFilm"])(id);
-        if (!rec) return;
-        setEditing({
-            id: rec.id,
-            title: rec.title_local ?? rec.title_original,
-            originalTitle: rec.title_original,
-            year: rec.year ?? undefined,
-            durationMinutes: rec.duration_seconds ? Math.round(rec.duration_seconds / 60) : undefined,
-            director: rec.director,
-            genres: Array.isArray(rec.genre) ? rec.genre : typeof rec.genre === 'string' ? rec.genre.split(',').map((s)=>s.trim()) : [],
-            country: rec.country,
-            language: rec.language_primary,
-            poster: rec.poster ?? undefined,
-            status: rec.status,
-            createdAt: rec.created_at,
-            description: rec.synopsis_short ?? rec.synopsis_long
-        });
-        setShowForm(true);
-    }
-    async function handleSave(m) {
-        // map Movie -> clientDB.FilmRecord shape
-        const rec = {
-            id: m.id,
-            title_original: m.originalTitle ?? m.title,
-            title_local: m.title,
-            year: m.year,
-            country: m.country,
-            language_primary: m.language,
-            director: m.director,
-            genre: m.genres,
-            duration_seconds: m.durationMinutes ? m.durationMinutes * 60 : 0,
-            synopsis_short: m.description,
-            poster: m.poster,
-            status: m.status ?? 'draft',
-            created_at: m.createdAt ?? new Date().toISOString()
+        const template = store === 'films' ? {
+            id: undefined,
+            title_original: 'Untitled',
+            title_local: 'Untitled',
+            year: new Date().getFullYear(),
+            director: '',
+            genre: [],
+            duration_seconds: 0,
+            status: 'draft'
+        } : {
+            id: undefined,
+            name: 'New category',
+            slug: '',
+            description: ''
         };
-        await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["putFilm"])(rec);
-        await reloadList();
-        setShowForm(false);
-        setEditing(null);
+        setEditingId(null);
+        setEditingJson(JSON.stringify(template, null, 2));
     }
-    const stats = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
-        const total = movies.length;
-        const published = movies.filter((m)=>m.status === 'published').length;
-        const drafts = movies.filter((m)=>m.status === 'draft').length;
-        const archived = movies.filter((m)=>m.status === 'archived').length;
-        return {
-            total,
-            published,
-            drafts,
-            archived
+    async function saveJson() {
+        if (!editingJson) return;
+        setBusy(true);
+        try {
+            const parsed = JSON.parse(editingJson);
+            if (store === 'films') {
+                // cast to clientDB.FilmRecord shape; putFilm will fill defaults
+                await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["putFilm"])(parsed);
+            } else {
+                await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["putCategory"])(parsed);
+            }
+            setEditingJson(null);
+            setEditingId(null);
+            await load();
+        } catch (err) {
+            alert('Lưu thất bại: ' + (err?.message || 'invalid json'));
+        } finally{
+            setBusy(false);
+        }
+    }
+    async function exportStore() {
+        setBusy(true);
+        try {
+            const data = store === 'films' ? await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getAllFilms"])() : await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getAllCategories"])();
+            const blob = new Blob([
+                JSON.stringify(data, null, 2)
+            ], {
+                type: 'application/json'
+            });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${store}-export-${new Date().toISOString().slice(0, 19)}.json`;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+        } catch (err) {
+            alert('Export thất bại');
+        } finally{
+            setBusy(false);
+        }
+    }
+    function handleImportFile(e) {
+        const f = e.target.files?.[0];
+        if (!f) return;
+        const reader = new FileReader();
+        reader.onload = async ()=>{
+            try {
+                const txt = String(reader.result ?? '');
+                const json = JSON.parse(txt);
+                if (!Array.isArray(json)) throw new Error('file must be array');
+                setBusy(true);
+                for (const rec of json){
+                    if (store === 'films') await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["putFilm"])(rec);
+                    else await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$clientDB$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["putCategory"])(rec);
+                }
+                await load();
+                alert('Import xong');
+            } catch (err) {
+                alert('Import thất bại: ' + err?.message);
+            } finally{
+                setBusy(false);
+            }
         };
-    }, [
-        movies
-    ]);
+        reader.readAsText(f);
+        e.currentTarget.value = '';
+    }
+    // filtering + pagination
     const filtered = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
-        if (!query) return movies;
+        if (!query) return items;
         const q = query.toLowerCase();
-        return movies.filter((m)=>(m.title || '').toLowerCase().includes(q) || (m.originalTitle || '').toLowerCase().includes(q) || (m.id || '').toLowerCase().includes(q) || (m.director || '').toLowerCase().includes(q) || (m.genres || []).join(' ').toLowerCase().includes(q));
+        return items.filter((i)=>JSON.stringify(i).toLowerCase().includes(q));
     }, [
-        movies,
+        items,
         query
     ]);
-    // pagination helpers
-    const totalItems = filtered.length;
-    const totalPages = Math.max(1, Math.ceil(totalItems / perPage));
-    const paged = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
+    const total = filtered.length;
+    const totalPages = Math.max(1, Math.ceil(total / perPage));
+    const pageItems = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
         const p = Math.max(1, Math.min(page, totalPages));
-        const start = (p - 1) * perPage;
-        return filtered.slice(start, start + perPage);
+        const s = (p - 1) * perPage;
+        return filtered.slice(s, s + perPage);
     }, [
         filtered,
         page,
         perPage,
         totalPages
     ]);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        if (page > totalPages) setPage(totalPages);
+    // columns detection
+    const columns = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
+        const base = items[0] ?? {};
+        return Object.keys(base).slice(0, 10) // show up to 10 columns
+        ;
     }, [
-        totalPages,
-        page
+        items
     ]);
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex items-start justify-between mb-6",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                className: "text-2xl font-semibold",
-                                children: "Quản lý phim"
-                            }, void 0, false, {
-                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                lineNumber: 602,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-sm text-slate-500 mt-1",
-                                children: "Quản lý danh sách phim, thêm/sửa/xoá và xem chi tiết"
-                            }, void 0, false, {
-                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                lineNumber: 603,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/src/app/movies/list/page.tsx",
-                        lineNumber: 601,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center gap-3",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            onClick: openNew,
-                            className: "inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700",
-                            children: "Thêm phim mới"
-                        }, void 0, false, {
-                            fileName: "[project]/src/app/movies/list/page.tsx",
-                            lineNumber: 606,
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$dashboard$2d$layout$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DashboardLayout"], {
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "p-6",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex items-center justify-between mb-6",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                    className: "text-2xl font-semibold",
+                                    children: "Quản lý bảng (client DB)"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/database/table/page.tsx",
+                                    lineNumber: 163,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-sm text-slate-500 mt-1",
+                                    children: "Chọn bảng, xem/nhập/xuất/ sửa JSON trực tiếp"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/database/table/page.tsx",
+                                    lineNumber: 164,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/app/database/table/page.tsx",
+                            lineNumber: 162,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center gap-2",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                    value: store,
+                                    onChange: (e)=>setStore(e.target.value),
+                                    className: "px-3 py-2 border rounded",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                            value: "films",
+                                            children: "films"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/database/table/page.tsx",
+                                            lineNumber: 169,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                            value: "categories",
+                                            children: "categories"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/database/table/page.tsx",
+                                            lineNumber: 170,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/app/database/table/page.tsx",
+                                    lineNumber: 168,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: load,
+                                    disabled: loading || busy,
+                                    className: "px-3 py-2 border rounded text-sm",
+                                    children: "Reload"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/database/table/page.tsx",
+                                    lineNumber: 173,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: exportStore,
+                                    disabled: busy,
+                                    className: "px-3 py-2 bg-slate-700 text-white rounded text-sm",
+                                    children: "Export"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/database/table/page.tsx",
+                                    lineNumber: 174,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                    className: "inline-flex items-center px-3 py-2 border rounded text-sm cursor-pointer",
+                                    children: [
+                                        "Import",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                            type: "file",
+                                            accept: "application/json",
+                                            onChange: handleImportFile,
+                                            className: "hidden"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/database/table/page.tsx",
+                                            lineNumber: 178,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/app/database/table/page.tsx",
+                                    lineNumber: 176,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: openNew,
+                                    className: "px-3 py-2 bg-blue-600 text-white rounded text-sm",
+                                    children: "Add"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/database/table/page.tsx",
+                                    lineNumber: 181,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/app/database/table/page.tsx",
+                            lineNumber: 167,
                             columnNumber: 11
                         }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/src/app/movies/list/page.tsx",
-                        lineNumber: 605,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/app/movies/list/page.tsx",
-                lineNumber: 600,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-4 gap-4 mb-6",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(StatCard, {
-                        title: "Tổng phim",
-                        value: stats.total
-                    }, void 0, false, {
-                        fileName: "[project]/src/app/movies/list/page.tsx",
-                        lineNumber: 613,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(StatCard, {
-                        title: "Đã xuất bản",
-                        value: stats.published
-                    }, void 0, false, {
-                        fileName: "[project]/src/app/movies/list/page.tsx",
-                        lineNumber: 614,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(StatCard, {
-                        title: "Bản nháp",
-                        value: stats.drafts
-                    }, void 0, false, {
-                        fileName: "[project]/src/app/movies/list/page.tsx",
-                        lineNumber: 615,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(StatCard, {
-                        title: "Lưu trữ",
-                        value: stats.archived
-                    }, void 0, false, {
-                        fileName: "[project]/src/app/movies/list/page.tsx",
-                        lineNumber: 616,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/app/movies/list/page.tsx",
-                lineNumber: 612,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "bg-white rounded-lg shadow",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "p-4 border-b flex items-center justify-between",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center gap-3",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                        value: query,
-                                        onChange: (e)=>setQuery(e.target.value),
-                                        placeholder: "Tìm kiếm phim, đạo diễn, thể loại...",
-                                        className: "px-3 py-2 border rounded text-sm w-80 focus:outline-none focus:ring"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/movies/list/page.tsx",
-                                        lineNumber: 622,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        onClick: ()=>setQuery(''),
-                                        className: "text-sm text-slate-600 hover:underline",
-                                        children: "Xoá"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/movies/list/page.tsx",
-                                        lineNumber: 628,
-                                        columnNumber: 13
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/app/database/table/page.tsx",
+                    lineNumber: 161,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "bg-white rounded-lg shadow p-4 mb-4",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex items-center justify-between mb-3",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "flex items-center gap-3",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                            value: query,
+                                            onChange: (e)=>setQuery(e.target.value),
+                                            placeholder: "Tìm kiếm (toàn bản ghi)...",
+                                            className: "px-3 py-2 border rounded w-96 text-sm"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/database/table/page.tsx",
+                                            lineNumber: 188,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            onClick: ()=>setQuery(''),
+                                            className: "text-sm text-slate-600",
+                                            children: "Clear"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/database/table/page.tsx",
+                                            lineNumber: 189,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/app/database/table/page.tsx",
+                                    lineNumber: 187,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "text-sm text-slate-500",
+                                    children: [
+                                        "Tổng: ",
+                                        total
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/app/database/table/page.tsx",
+                                    lineNumber: 191,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/app/database/table/page.tsx",
+                            lineNumber: 186,
+                            columnNumber: 11
+                        }, this),
+                        loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "text-sm text-slate-500",
+                            children: "Đang tải..."
+                        }, void 0, false, {
+                            fileName: "[project]/src/app/database/table/page.tsx",
+                            lineNumber: 194,
+                            columnNumber: 23
+                        }, this),
+                        error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "text-sm text-red-500",
+                            children: [
+                                "Lỗi: ",
+                                error
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/app/database/table/page.tsx",
+                            lineNumber: 195,
+                            columnNumber: 21
+                        }, this),
+                        !loading && !error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "overflow-x-auto",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
+                                        className: "min-w-full divide-y divide-gray-200",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
+                                                className: "bg-gray-50",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                                    children: [
+                                                        columns.map((col)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                                className: "px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase",
+                                                                children: col
+                                                            }, col, false, {
+                                                                fileName: "[project]/src/app/database/table/page.tsx",
+                                                                lineNumber: 204,
+                                                                columnNumber: 25
+                                                            }, this)),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
+                                                            className: "px-4 py-2 text-right text-xs font-medium text-gray-500 uppercase",
+                                                            children: "Actions"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/app/database/table/page.tsx",
+                                                            lineNumber: 206,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/src/app/database/table/page.tsx",
+                                                    lineNumber: 202,
+                                                    columnNumber: 21
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/database/table/page.tsx",
+                                                lineNumber: 201,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
+                                                className: "bg-white divide-y divide-gray-100",
+                                                children: [
+                                                    pageItems.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                            colSpan: columns.length + 1,
+                                                            className: "px-6 py-8 text-center text-sm text-slate-500",
+                                                            children: "Không có dữ liệu"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/app/database/table/page.tsx",
+                                                            lineNumber: 211,
+                                                            columnNumber: 27
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/database/table/page.tsx",
+                                                        lineNumber: 211,
+                                                        columnNumber: 23
+                                                    }, this),
+                                                    pageItems.map((rec)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                                            children: [
+                                                                columns.map((c)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                                        className: "px-4 py-3 align-middle text-sm text-slate-700",
+                                                                        children: String(rec[c] ?? '-').slice(0, 60)
+                                                                    }, c, false, {
+                                                                        fileName: "[project]/src/app/database/table/page.tsx",
+                                                                        lineNumber: 216,
+                                                                        columnNumber: 27
+                                                                    }, this)),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
+                                                                    className: "px-4 py-3 text-right",
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "flex items-center justify-end gap-3",
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                                onClick: ()=>openEdit(rec),
+                                                                                className: "text-blue-600 text-sm",
+                                                                                children: "Edit"
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/src/app/database/table/page.tsx",
+                                                                                lineNumber: 222,
+                                                                                columnNumber: 29
+                                                                            }, this),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                                onClick: ()=>handleDelete(rec.id),
+                                                                                className: "text-red-600 text-sm",
+                                                                                children: "Delete"
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/src/app/database/table/page.tsx",
+                                                                                lineNumber: 223,
+                                                                                columnNumber: 29
+                                                                            }, this)
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/src/app/database/table/page.tsx",
+                                                                        lineNumber: 221,
+                                                                        columnNumber: 27
+                                                                    }, this)
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/database/table/page.tsx",
+                                                                    lineNumber: 220,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, rec.id ?? JSON.stringify(rec).slice(0, 50), true, {
+                                                            fileName: "[project]/src/app/database/table/page.tsx",
+                                                            lineNumber: 214,
+                                                            columnNumber: 23
+                                                        }, this))
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/app/database/table/page.tsx",
+                                                lineNumber: 209,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/app/database/table/page.tsx",
+                                        lineNumber: 200,
+                                        columnNumber: 17
                                     }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                lineNumber: 621,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-sm text-slate-500",
-                                children: [
-                                    "Tổng: ",
-                                    totalItems
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                lineNumber: 632,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/src/app/movies/list/page.tsx",
-                        lineNumber: 620,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "p-4 overflow-x-auto",
-                        children: [
-                            loading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-sm text-slate-500",
-                                children: "Đang tải danh sách phim..."
-                            }, void 0, false, {
-                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                lineNumber: 636,
-                                columnNumber: 23
-                            }, this),
-                            error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-sm text-red-500",
-                                children: [
-                                    "Lỗi: ",
-                                    error
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                lineNumber: 637,
-                                columnNumber: 21
-                            }, this),
-                            !loading && !error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
-                                className: "min-w-full divide-y divide-gray-200",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
-                                        className: "bg-gray-50",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/database/table/page.tsx",
+                                    lineNumber: 199,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "mt-3 flex items-center justify-between",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "text-sm text-slate-600",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase",
-                                                    children: "Poster"
+                                                "Hiển thị ",
+                                                total === 0 ? 0 : (page - 1) * perPage + 1,
+                                                " - ",
+                                                Math.min(page * perPage, total),
+                                                " của ",
+                                                total
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/src/app/database/table/page.tsx",
+                                            lineNumber: 234,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex items-center gap-2",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                    value: perPage,
+                                                    onChange: (e)=>{
+                                                        setPerPage(Number(e.target.value));
+                                                        setPage(1);
+                                                    },
+                                                    className: "px-2 py-1 border rounded text-sm",
+                                                    children: [
+                                                        5,
+                                                        10,
+                                                        20,
+                                                        50
+                                                    ].map((n)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                            value: n,
+                                                            children: [
+                                                                n,
+                                                                "/trang"
+                                                            ]
+                                                        }, n, true, {
+                                                            fileName: "[project]/src/app/database/table/page.tsx",
+                                                            lineNumber: 239,
+                                                            columnNumber: 44
+                                                        }, this))
                                                 }, void 0, false, {
-                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                    lineNumber: 643,
+                                                    fileName: "[project]/src/app/database/table/page.tsx",
+                                                    lineNumber: 238,
                                                     columnNumber: 19
                                                 }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase",
-                                                    children: "Tiêu đề"
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    onClick: ()=>setPage((p)=>Math.max(1, p - 1)),
+                                                    disabled: page <= 1,
+                                                    className: "px-3 py-1 border rounded text-sm disabled:opacity-50",
+                                                    children: "Prev"
                                                 }, void 0, false, {
-                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                    lineNumber: 644,
+                                                    fileName: "[project]/src/app/database/table/page.tsx",
+                                                    lineNumber: 241,
                                                     columnNumber: 19
                                                 }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase",
-                                                    children: "Năm"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                    lineNumber: 645,
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "text-sm px-2",
+                                                    children: [
+                                                        page,
+                                                        "/",
+                                                        totalPages
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/src/app/database/table/page.tsx",
+                                                    lineNumber: 242,
                                                     columnNumber: 19
                                                 }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase",
-                                                    children: "Thời lượng"
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    onClick: ()=>setPage((p)=>Math.min(totalPages, p + 1)),
+                                                    disabled: page >= totalPages,
+                                                    className: "px-3 py-1 border rounded text-sm disabled:opacity-50",
+                                                    children: "Next"
                                                 }, void 0, false, {
-                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                    lineNumber: 646,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase",
-                                                    children: "Đạo diễn"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                    lineNumber: 647,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase",
-                                                    children: "Thể loại"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                    lineNumber: 648,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase",
-                                                    children: "Quốc gia"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                    lineNumber: 649,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase",
-                                                    children: "Ngôn ngữ"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                    lineNumber: 650,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase",
-                                                    children: "Trạng thái"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                    lineNumber: 651,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase",
-                                                    children: "Ngày tạo"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                    lineNumber: 652,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
-                                                    className: "px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase",
-                                                    children: "Thao tác"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                    lineNumber: 653,
+                                                    fileName: "[project]/src/app/database/table/page.tsx",
+                                                    lineNumber: 243,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
-                                            fileName: "[project]/src/app/movies/list/page.tsx",
-                                            lineNumber: 642,
+                                            fileName: "[project]/src/app/database/table/page.tsx",
+                                            lineNumber: 237,
                                             columnNumber: 17
                                         }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/movies/list/page.tsx",
-                                        lineNumber: 641,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
-                                        className: "bg-white divide-y divide-gray-100",
-                                        children: [
-                                            totalItems === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                    colSpan: 11,
-                                                    className: "px-6 py-8 text-center text-sm text-slate-500",
-                                                    children: "Không tìm thấy phim"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                    lineNumber: 659,
-                                                    columnNumber: 21
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                                lineNumber: 658,
-                                                columnNumber: 19
-                                            }, this),
-                                            paged.map((movie)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tr", {
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "px-4 py-4 align-middle",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "w-16 h-24 bg-gray-100 rounded overflow-hidden flex items-center justify-center",
-                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                                    src: movie.poster ?? '/placeholder-poster.png',
-                                                                    alt: movie.title,
-                                                                    className: "object-cover w-full h-full",
-                                                                    onError: (e)=>{
-                                                                        e.currentTarget.src = '/placeholder-poster.png';
-                                                                    }
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                                    lineNumber: 669,
-                                                                    columnNumber: 25
-                                                                }, this)
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                                                lineNumber: 668,
-                                                                columnNumber: 23
-                                                            }, this)
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/movies/list/page.tsx",
-                                                            lineNumber: 667,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "px-4 py-4 align-middle",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "text-sm font-medium text-gray-900",
-                                                                    children: movie.title
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                                    lineNumber: 679,
-                                                                    columnNumber: 23
-                                                                }, this),
-                                                                movie.originalTitle && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "text-xs text-slate-500",
-                                                                    children: movie.originalTitle
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                                    lineNumber: 680,
-                                                                    columnNumber: 47
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "text-xs text-slate-400 mt-1",
-                                                                    children: [
-                                                                        "ID: ",
-                                                                        movie.id
-                                                                    ]
-                                                                }, void 0, true, {
-                                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                                    lineNumber: 681,
-                                                                    columnNumber: 23
-                                                                }, this)
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/src/app/movies/list/page.tsx",
-                                                            lineNumber: 678,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "px-4 py-4 align-middle",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "text-sm",
-                                                                children: movie.year ?? '-'
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                                                lineNumber: 685,
-                                                                columnNumber: 23
-                                                            }, this)
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/movies/list/page.tsx",
-                                                            lineNumber: 684,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "px-4 py-4 align-middle",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "text-sm",
-                                                                children: movie.durationMinutes ? `${movie.durationMinutes} phút` : '-'
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                                                lineNumber: 689,
-                                                                columnNumber: 23
-                                                            }, this)
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/movies/list/page.tsx",
-                                                            lineNumber: 688,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "px-4 py-4 align-middle",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "text-sm",
-                                                                children: movie.director ?? '-'
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                                                lineNumber: 693,
-                                                                columnNumber: 23
-                                                            }, this)
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/movies/list/page.tsx",
-                                                            lineNumber: 692,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "px-4 py-4 align-middle",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "text-sm",
-                                                                children: (movie.genres || []).join(', ') || '-'
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                                                lineNumber: 697,
-                                                                columnNumber: 23
-                                                            }, this)
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/movies/list/page.tsx",
-                                                            lineNumber: 696,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "px-4 py-4 align-middle",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "text-sm",
-                                                                children: movie.country ?? '-'
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                                                lineNumber: 701,
-                                                                columnNumber: 23
-                                                            }, this)
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/movies/list/page.tsx",
-                                                            lineNumber: 700,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "px-4 py-4 align-middle",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "text-sm",
-                                                                children: movie.language ?? '-'
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                                                lineNumber: 705,
-                                                                columnNumber: 23
-                                                            }, this)
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/movies/list/page.tsx",
-                                                            lineNumber: 704,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "px-4 py-4 align-middle",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: `inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${movie.status === 'published' ? 'bg-green-100 text-green-800' : movie.status === 'draft' ? 'bg-yellow-100 text-yellow-800' : 'bg-gray-100 text-gray-800'}`,
-                                                                children: movie.status ?? 'unknown'
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                                                lineNumber: 709,
-                                                                columnNumber: 23
-                                                            }, this)
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/movies/list/page.tsx",
-                                                            lineNumber: 708,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "px-4 py-4 align-middle text-sm text-slate-500",
-                                                            children: movie.createdAt ?? '-'
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/movies/list/page.tsx",
-                                                            lineNumber: 718,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                                            className: "px-4 py-4 align-middle text-right",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "flex items-center justify-end gap-3",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                                        href: `/movies/${movie.id}`,
-                                                                        className: "text-blue-600 text-sm hover:underline",
-                                                                        children: "Xem"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/src/app/movies/list/page.tsx",
-                                                                        lineNumber: 722,
-                                                                        columnNumber: 25
-                                                                    }, this),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                        onClick: ()=>openEdit(movie.id),
-                                                                        className: "text-amber-600 text-sm hover:underline",
-                                                                        children: "Sửa"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/src/app/movies/list/page.tsx",
-                                                                        lineNumber: 723,
-                                                                        columnNumber: 25
-                                                                    }, this),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                        onClick: ()=>handleDelete(movie.id),
-                                                                        disabled: deletingId === movie.id,
-                                                                        className: "text-red-600 text-sm hover:underline disabled:opacity-50",
-                                                                        children: deletingId === movie.id ? 'Đang xoá...' : 'Xoá'
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/src/app/movies/list/page.tsx",
-                                                                        lineNumber: 724,
-                                                                        columnNumber: 25
-                                                                    }, this)
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                                                lineNumber: 721,
-                                                                columnNumber: 23
-                                                            }, this)
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/src/app/movies/list/page.tsx",
-                                                            lineNumber: 720,
-                                                            columnNumber: 21
-                                                        }, this)
-                                                    ]
-                                                }, movie.id, true, {
-                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                    lineNumber: 666,
-                                                    columnNumber: 19
-                                                }, this))
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/app/movies/list/page.tsx",
-                                        lineNumber: 656,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                lineNumber: 640,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/src/app/movies/list/page.tsx",
-                        lineNumber: 635,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "p-4 border-t flex items-center justify-between gap-4",
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/app/database/table/page.tsx",
+                                    lineNumber: 233,
+                                    columnNumber: 15
+                                }, this)
+                            ]
+                        }, void 0, true)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/app/database/table/page.tsx",
+                    lineNumber: 185,
+                    columnNumber: 9
+                }, this),
+                editingJson !== null && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "fixed inset-0 z-50 flex items-start justify-center pt-16 bg-black/40",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "w-[90%] max-w-4xl bg-white rounded shadow p-4",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "text-sm text-slate-600",
+                                className: "flex items-center justify-between mb-3",
                                 children: [
-                                    "Hiển thị ",
-                                    totalItems === 0 ? 0 : (page - 1) * perPage + 1,
-                                    " - ",
-                                    Math.min(page * perPage, totalItems),
-                                    " của ",
-                                    totalItems
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                lineNumber: 742,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center gap-2",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                        value: perPage,
-                                        onChange: (e)=>{
-                                            setPerPage(Number(e.target.value));
-                                            setPage(1);
-                                        },
-                                        className: "px-2 py-1 border rounded text-sm",
-                                        children: [
-                                            5,
-                                            10,
-                                            20,
-                                            50
-                                        ].map((n)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                value: n,
-                                                children: [
-                                                    n,
-                                                    " / trang"
-                                                ]
-                                            }, n, true, {
-                                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                                lineNumber: 747,
-                                                columnNumber: 38
-                                            }, this))
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "text-lg font-medium",
+                                        children: editingId ? `Edit ${editingId}` : 'New record'
                                     }, void 0, false, {
-                                        fileName: "[project]/src/app/movies/list/page.tsx",
-                                        lineNumber: 746,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        onClick: ()=>setPage((p)=>Math.max(1, p - 1)),
-                                        disabled: page <= 1,
-                                        className: "px-3 py-1 border rounded text-sm disabled:opacity-50",
-                                        children: "Prev"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/movies/list/page.tsx",
-                                        lineNumber: 750,
-                                        columnNumber: 13
+                                        fileName: "[project]/src/app/database/table/page.tsx",
+                                        lineNumber: 255,
+                                        columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center gap-1",
-                                        children: (()=>{
-                                            const pages = [];
-                                            const start = Math.max(1, page - 3);
-                                            const end = Math.min(totalPages, page + 3);
-                                            for(let i = start; i <= end; i++)pages.push(i);
-                                            return pages.map((p)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                    onClick: ()=>setPage(p),
-                                                    className: `px-2 py-1 text-sm rounded ${p === page ? 'bg-slate-200' : 'hover:bg-slate-100'}`,
-                                                    children: p
-                                                }, p, false, {
-                                                    fileName: "[project]/src/app/movies/list/page.tsx",
-                                                    lineNumber: 762,
-                                                    columnNumber: 19
-                                                }, this));
-                                        })()
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/movies/list/page.tsx",
-                                        lineNumber: 755,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        onClick: ()=>setPage((p)=>Math.min(totalPages, p + 1)),
-                                        disabled: page >= totalPages,
-                                        className: "px-3 py-1 border rounded text-sm disabled:opacity-50",
-                                        children: "Next"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/movies/list/page.tsx",
-                                        lineNumber: 767,
-                                        columnNumber: 13
+                                        className: "flex items-center gap-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                onClick: ()=>{
+                                                    setEditingJson(null);
+                                                    setEditingId(null);
+                                                },
+                                                className: "px-3 py-1 border rounded text-sm",
+                                                children: "Close"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/database/table/page.tsx",
+                                                lineNumber: 257,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                onClick: saveJson,
+                                                disabled: busy,
+                                                className: "px-3 py-1 bg-blue-600 text-white rounded text-sm",
+                                                children: "Save"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/database/table/page.tsx",
+                                                lineNumber: 258,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/app/database/table/page.tsx",
+                                        lineNumber: 256,
+                                        columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
-                                fileName: "[project]/src/app/movies/list/page.tsx",
-                                lineNumber: 745,
-                                columnNumber: 11
+                                fileName: "[project]/src/app/database/table/page.tsx",
+                                lineNumber: 254,
+                                columnNumber: 15
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
+                                value: editingJson,
+                                onChange: (e)=>setEditingJson(e.target.value),
+                                className: "w-full h-[60vh] border rounded p-2 font-mono text-sm"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/database/table/page.tsx",
+                                lineNumber: 261,
+                                columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
-                        fileName: "[project]/src/app/movies/list/page.tsx",
-                        lineNumber: 741,
-                        columnNumber: 9
+                        fileName: "[project]/src/app/database/table/page.tsx",
+                        lineNumber: 253,
+                        columnNumber: 13
                     }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/app/movies/list/page.tsx",
-                lineNumber: 619,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true);
-}
-function MovieAdminPage() {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$dashboard$2d$layout$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DashboardLayout"], {
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "p-6",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(MovieAdminPageContent, {}, void 0, false, {
-                fileName: "[project]/src/app/movies/list/page.tsx",
-                lineNumber: 781,
-                columnNumber: 9
-            }, this)
-        }, void 0, false, {
-            fileName: "[project]/src/app/movies/list/page.tsx",
-            lineNumber: 780,
+                }, void 0, false, {
+                    fileName: "[project]/src/app/database/table/page.tsx",
+                    lineNumber: 252,
+                    columnNumber: 11
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/app/database/table/page.tsx",
+            lineNumber: 160,
             columnNumber: 7
         }, this)
     }, void 0, false, {
-        fileName: "[project]/src/app/movies/list/page.tsx",
-        lineNumber: 779,
+        fileName: "[project]/src/app/database/table/page.tsx",
+        lineNumber: 159,
         columnNumber: 5
     }, this);
 }
@@ -3365,4 +2472,4 @@ function MovieAdminPage() {
 
 };
 
-//# sourceMappingURL=src_0f0f07fb._.js.map
+//# sourceMappingURL=src_e2ac7fb9._.js.map
