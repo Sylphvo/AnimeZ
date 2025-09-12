@@ -11,16 +11,14 @@
       "static/chunks/9341.3de5922501c09e3c.js"
     ]
   },
-  "components\\TeaGardenExplorer.tsx -> cannon-es": {
-    "id": 1381,
+  "app\\movies\\page.tsx -> ./movie-admin": {
+    "id": 3797,
     "files": [
-      "static/chunks/ef4d719b.ecda2d465f00d1a6.js"
-    ]
-  },
-  "components\\TeaGardenExplorer.tsx -> three/examples/jsm/loaders/GLTFLoader": {
-    "id": 9311,
-    "files": [
-      "static/chunks/9311.0eac38f31c3e16d1.js"
+      "static/css/b5937c2264475ef0.css",
+      "static/css/1eb33ccb4620e681.css",
+      "static/chunks/32ea55aa.02e94d27162f6cb8.js",
+      "static/chunks/7946.da93533230d8b310.js",
+      "static/chunks/3797.5e95e57b2f59c15e.js"
     ]
   },
   "components\\characters\\loadCharacter.ts -> three/examples/jsm/loaders/GLTFLoader": {

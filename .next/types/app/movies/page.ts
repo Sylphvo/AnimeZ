@@ -1,4 +1,4 @@
-// File: C:\Users\phuvm\source\repos\AnimeZ\src\app\movies\page.tsx
+// File: C:\Users\Cilse\source\AnimeZ.github.io\src\app\movies\page.tsx
 import * as entry from '../../../../src/app/movies/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

@@ -129,6 +129,8 @@ function SceneContent({ materials, thirdPerson, modelPath }: { materials: any; t
          const res = await loadCharacter(scene, playerRef.current.clone(), url)
          if (!mounted) return
          characterGroupRef.current = res.group
+         // Thêm dòng này để scale nhỏ lại, ví dụ 0.5 lần
+         characterGroupRef.current.scale.set(0.5, 0.5, 0.5)
          if (res.mixer) mixerRef.current = res.mixer
          if (res.actions) actionsRef.current = res.actions
          if (characterGroupRef.current) characterGroupRef.current.visible = thirdPerson
@@ -164,10 +166,16 @@ function SceneContent({ materials, thirdPerson, modelPath }: { materials: any; t
      forward.normalize()
      const right = new THREE.Vector3().crossVectors(forward, new THREE.Vector3(0, 1, 0)).normalize()
 
-     if (movementRef.current.forward) playerRef.current.addScaledVector(forward, speed)
-     if (movementRef.current.backward) playerRef.current.addScaledVector(forward, -speed)
-     if (movementRef.current.left) playerRef.current.addScaledVector(right, -speed)
-     if (movementRef.current.right) playerRef.current.addScaledVector(right, speed)
+     let moveDir = new THREE.Vector3()
+     if (movementRef.current.forward) moveDir.add(forward)
+     if (movementRef.current.backward) moveDir.add(forward.clone().negate())
+     if (movementRef.current.left) moveDir.add(right.clone().negate())
+     if (movementRef.current.right) moveDir.add(right)
+     moveDir.normalize()
+
+     if (moveDir.length() > 0) {
+       playerRef.current.addScaledVector(moveDir, speed)
+     }
 
      // camera control: first-person or third-person
      const EYE_HEIGHT = 1.6
@@ -197,7 +205,12 @@ function SceneContent({ materials, thirdPerson, modelPath }: { materials: any; t
        const char = characterGroupRef.current
        const target = new THREE.Vector3(playerRef.current.x, 0, playerRef.current.z)
        char.position.lerp(target, 0.2)
-       char.rotation.y = mouseRef.current.theta
+       // Quay theo hướng di chuyển nếu có
+       if (moveDir.length() > 0) {
+         char.rotation.y = Math.atan2(moveDir.x, moveDir.z)
+       } else {
+         char.rotation.y = mouseRef.current.theta // fallback
+       }
      }
    })
 

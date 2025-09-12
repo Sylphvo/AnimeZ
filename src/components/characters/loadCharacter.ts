@@ -15,10 +15,12 @@ export async function loadCharacter(scene: THREE.Scene, startPosition: THREE.Vec
   // @ts-ignore
   const { GLTFLoader } = await import('three/examples/jsm/loaders/GLTFLoader')
   const loader = new GLTFLoader()
-  const gltf = await loader.loadAsync('/models/character.glb')
+  const gltf = await loader.loadAsync('/models/Duck.gltf')
 
   const root = gltf.scene || new THREE.Group()
   root.position.copy(startPosition)
+  // Scale nhỏ lại, ví dụ 0.5 lần
+  root.scale.set(0.5, 0.5, 0.5)
 
   // ensure shadows and convert materials to standard where useful
   root.traverse((c: any) => {

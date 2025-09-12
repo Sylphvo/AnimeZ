@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import dynamic from 'next/dynamic'
 
 // Type definitions
 interface Movie {
@@ -36,7 +37,9 @@ interface MovieSection {
   viewAllLink?: string;
 }
 
-const MoviesPage = () => {
+const MovieAdminPage = dynamic(() => import('./movie-admin'), { ssr: false })
+
+export default function MoviesPage() {
   const [currentBanner, setCurrentBanner] = useState(0);
   const [selectedGenre, setSelectedGenre] = useState('Tất cả');
   console.log(currentBanner);
@@ -347,8 +350,7 @@ const MoviesPage = () => {
           </div>
         </div>
       </div>
+      <MovieAdminPage />
     </div>
   );
 };
-
-export default MoviesPage;
