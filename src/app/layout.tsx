@@ -6,7 +6,7 @@ import { AuthProvider } from "@/components/auth-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "TailAdmin - User Management Dashboard",
+  title: "AnimeZ",
   description: "Modern admin dashboard for user management",
 };
 

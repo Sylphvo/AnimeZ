@@ -1,4 +1,4 @@
-// File: C:\Users\Cilse\source\AnimeZ.github.io\src\app\api\movies\route.ts
+// File: C:\Users\phuvm\source\repos\AnimeZ\src\app\api\movies\route.ts
 import * as entry from '../../../../../src/app/api/movies/route.js'
 import type { NextRequest } from 'next/server.js'
 

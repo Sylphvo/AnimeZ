@@ -55,6 +55,12 @@ const sidebarItems = [
     active: false,
   },
   {
+    label: "Quản lý phim",
+    href: "/movies/list",
+    active: false,
+    indent: true,
+  },
+  {
     label: "Truyện",
     href: "/comics",
     active: false,

@@ -1,4 +1,4 @@
-// File: C:\Users\Cilse\source\AnimeZ.github.io\src\app\watch\[id]\page.tsx
+// File: C:\Users\phuvm\source\repos\AnimeZ\src\app\watch\[id]\page.tsx
 import * as entry from '../../../../../src/app/watch/[id]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

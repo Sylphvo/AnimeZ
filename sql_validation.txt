@@ -1,0 +1,410 @@
+/* Enhanced procedure: JSON input, validation, returns film_id, version_id, assets table */
+CREATE OR ALTER PROCEDURE dbo.sp_create_film_with_version_and_assets_validated
+  @film_json   NVARCHAR(MAX),
+  @version_json NVARCHAR(MAX),
+  @assets_json  NVARCHAR(MAX)
+AS
+BEGIN
+  SET NOCOUNT ON;
+
+  -- Basic JSON validation
+  IF @film_json IS NULL OR ISJSON(@film_json) = 0
+  BEGIN
+    RAISERROR('Invalid or missing film_json',16,1); RETURN;
+  END
+  IF @version_json IS NULL OR ISJSON(@version_json) = 0
+  BEGIN
+    RAISERROR('Invalid or missing version_json',16,1); RETURN;
+  END
+  IF @assets_json IS NOT NULL AND ISJSON(@assets_json) = 0
+  BEGIN
+    RAISERROR('assets_json must be valid JSON array or null',16,1); RETURN;
+  END
+
+  DECLARE @film_id UNIQUEIDENTIFIER = NEWID();
+  DECLARE @version_id UNIQUEIDENTIFIER = NEWID();
+
+  -- Table to capture inserted assets
+  DECLARE @InsertedAssets TABLE (
+    asset_id UNIQUEIDENTIFIER,
+    file_name NVARCHAR(500),
+    asset_type NVARCHAR(100)
+  );
+
+  BEGIN TRY
+    BEGIN TRAN;
+
+    -- Validate required film fields within JSON (title_original required)
+    DECLARE @title_original NVARCHAR(500);
+    SELECT @title_original = title_original
+    FROM OPENJSON(@film_json) WITH (title_original NVARCHAR(500) '$.title_original');
+
+    IF @title_original IS NULL OR LTRIM(RTRIM(@title_original)) = ''
+    BEGIN
+      THROW 51000, 'film_json must include title_original', 1;
+    END
+
+    -- Validate required version fields (file_name required)
+    DECLARE @v_file_name NVARCHAR(500);
+    SELECT @v_file_name = file_name
+    FROM OPENJSON(@version_json) WITH (file_name NVARCHAR(500) '$.file_name');
+    IF @v_file_name IS NULL OR LTRIM(RTRIM(@v_file_name)) = ''
+    BEGIN
+      THROW 51001, 'version_json must include file_name', 1;
+    END
+
+    -- Insert film
+    INSERT INTO dbo.films (
+      id, title_original, title_local, alternate_titles, [year], country,
+      language_primary, director, producers, main_cast, genre,
+      duration_seconds, synopsis_short, synopsis_long, tags,
+      production_company, external_ids, rating, release_date, status, created_by
+    )
+    SELECT
+      @film_id,
+      f.title_original,
+      f.title_local,
+      f.alternate_titles,
+      f.[year],
+      f.country,
+      f.language_primary,
+      f.director,
+      f.producers,
+      f.main_cast,
+      f.genre,
+      f.duration_seconds,
+      f.synopsis_short,
+      f.synopsis_long,
+      f.tags,
+      f.production_company,
+      f.external_ids,
+      f.rating,
+      TRY_CAST(f.release_date AS DATE),
+      ISNULL(f.status,'draft'),
+      TRY_CAST(NULLIF(f.created_by,'') AS UNIQUEIDENTIFIER)
+    FROM OPENJSON(@film_json) WITH (
+      title_original NVARCHAR(500) '$.title_original',
+      title_local NVARCHAR(500) '$.title_local',
+      alternate_titles NVARCHAR(MAX) '$.alternate_titles' AS JSON,
+      [year] INT '$.year',
+      country NVARCHAR(200) '$.country',
+      language_primary NVARCHAR(200) '$.language_primary',
+      director NVARCHAR(300) '$.director',
+      producers NVARCHAR(MAX) '$.producers' AS JSON,
+      main_cast NVARCHAR(MAX) '$.main_cast' AS JSON,
+      genre NVARCHAR(MAX) '$.genre' AS JSON,
+      duration_seconds INT '$.duration_seconds',
+      synopsis_short NVARCHAR(1000) '$.synopsis_short',
+      synopsis_long NVARCHAR(MAX) '$.synopsis_long',
+      tags NVARCHAR(MAX) '$.tags' AS JSON,
+      production_company NVARCHAR(300) '$.production_company',
+      external_ids NVARCHAR(MAX) '$.external_ids' AS JSON,
+      rating NVARCHAR(50) '$.rating',
+      release_date NVARCHAR(50) '$.release_date',
+      status NVARCHAR(50) '$.status',
+      created_by NVARCHAR(50) '$.created_by'
+    ) AS f;
+
+    -- Insert version
+    INSERT INTO dbo.film_versions (
+      version_id, film_id, version_name, file_name, storage_url,
+      file_size_bytes, container, video_codec, video_bitrate, resolution,
+      aspect_ratio, framerate, duration_seconds, audio_format, audio_channels,
+      audio_track_map, subtitles, closed_captions, checksum, mezzanine, qc_status, ingest_date
+    )
+    SELECT
+      @version_id,
+      @film_id,
+      v.version_name,
+      v.file_name,
+      v.storage_url,
+      v.file_size_bytes,
+      v.container,
+      v.video_codec,
+      v.video_bitrate,
+      v.resolution,
+      v.aspect_ratio,
+      TRY_CAST(v.framerate AS DECIMAL(8,3)),
+      v.duration_seconds,
+      v.audio_format,
+      v.audio_channels,
+      v.audio_track_map,
+      v.subtitles,
+      CASE WHEN TRY_CAST(v.closed_captions AS INT) = 1 THEN 1 ELSE 0 END,
+      v.checksum,
+      CASE WHEN TRY_CAST(v.mezzanine AS INT) = 1 THEN 1 ELSE 0 END,
+      ISNULL(v.qc_status,'pending'),
+      TRY_CAST(v.ingest_date AS DATETIMEOFFSET)
+    FROM OPENJSON(@version_json) WITH (
+      version_name NVARCHAR(200) '$.version_name',
+      file_name NVARCHAR(500) '$.file_name',
+      storage_url NVARCHAR(1000) '$.storage_url',
+      file_size_bytes BIGINT '$.file_size_bytes',
+      container NVARCHAR(100) '$.container',
+      video_codec NVARCHAR(100) '$.video_codec',
+      video_bitrate BIGINT '$.video_bitrate',
+      resolution NVARCHAR(50) '$.resolution',
+      aspect_ratio NVARCHAR(50) '$.aspect_ratio',
+      framerate NVARCHAR(50) '$.framerate',
+      duration_seconds INT '$.duration_seconds',
+      audio_format NVARCHAR(100) '$.audio_format',
+      audio_channels NVARCHAR(50) '$.audio_channels',
+      audio_track_map NVARCHAR(MAX) '$.audio_track_map' AS JSON,
+      subtitles NVARCHAR(MAX) '$.subtitles' AS JSON,
+      closed_captions NVARCHAR(10) '$.closed_captions',
+      checksum NVARCHAR(128) '$.checksum',
+      mezzanine NVARCHAR(10) '$.mezzanine',
+      qc_status NVARCHAR(50) '$.qc_status',
+      ingest_date NVARCHAR(50) '$.ingest_date'
+    ) AS v;
+
+    -- Insert assets and capture inserted ids
+    IF @assets_json IS NOT NULL
+    BEGIN
+      INSERT INTO dbo.assets (
+        asset_id, film_id, asset_type, title, file_name, file_url,
+        resolution, file_size_bytes, language, checksum, usage_restrictions
+      )
+      OUTPUT inserted.asset_id, inserted.file_name, inserted.asset_type INTO @InsertedAssets
+      SELECT
+        NEWID(),
+        @film_id,
+        a.asset_type,
+        a.title,
+        a.file_name,
+        a.file_url,
+        a.resolution,
+        a.file_size_bytes,
+        a.language,
+        a.checksum,
+        a.usage_restrictions
+      FROM OPENJSON(@assets_json) WITH (
+        asset_type NVARCHAR(100) '$.asset_type',
+        title NVARCHAR(500) '$.title',
+        file_name NVARCHAR(500) '$.file_name',
+        file_url NVARCHAR(1000) '$.file_url',
+        resolution NVARCHAR(50) '$.resolution',
+        file_size_bytes BIGINT '$.file_size_bytes',
+        language NVARCHAR(50) '$.language',
+        checksum NVARCHAR(128) '$.checksum',
+        usage_restrictions NVARCHAR(MAX) '$.usage_restrictions'
+      ) AS a;
+    END
+
+    COMMIT TRAN;
+
+    -- Return summary and list of inserted assets
+    SELECT CAST(@film_id AS NVARCHAR(36)) AS film_id, CAST(@version_id AS NVARCHAR(36)) AS version_id,
+           (SELECT COUNT(*) FROM @InsertedAssets) AS assets_inserted;
+    SELECT asset_id, file_name, asset_type FROM @InsertedAssets ORDER BY file_name;
+
+  END TRY
+  BEGIN CATCH
+    IF XACT_STATE() <> 0 ROLLBACK TRAN;
+    DECLARE @ErrMsg NVARCHAR(4000) = ERROR_MESSAGE();
+    DECLARE @ErrNum INT = ERROR_NUMBER();
+    RAISERROR('sp_create_film_with_version_and_assets_validated failed: %d - %s',16,1,@ErrNum,@ErrMsg);
+    RETURN;
+  END CATCH
+END;
+GO
+
+/* Example call (same as previous example) */
+/* EXEC dbo.sp_create_film_with_version_and_assets_validated @film_json = N'{...}', @version_json = N'{...}', @assets_json = N'[...]'; */
+
+
+--------------------------------------------------------------------------------
+-- Alternative: TVP version (assets passed as table-valued parameter)
+--------------------------------------------------------------------------------
+-- 1) Create TVP type
+IF TYPE_ID(N'dbo.AssetTVP') IS NULL
+BEGIN
+  CREATE TYPE dbo.AssetTVP AS TABLE (
+    asset_type NVARCHAR(100),
+    title NVARCHAR(500),
+    file_name NVARCHAR(500),
+    file_url NVARCHAR(1000),
+    resolution NVARCHAR(50),
+    file_size_bytes BIGINT,
+    language NVARCHAR(50),
+    checksum NVARCHAR(128),
+    usage_restrictions NVARCHAR(MAX)
+  );
+END
+GO
+
+-- 2) Procedure using TVP
+CREATE OR ALTER PROCEDURE dbo.sp_create_film_with_version_and_assets_tvp
+  @film_json   NVARCHAR(MAX),
+  @version_json NVARCHAR(MAX),
+  @assets dbo.AssetTVP READONLY
+AS
+BEGIN
+  SET NOCOUNT ON;
+
+  IF @film_json IS NULL OR ISJSON(@film_json) = 0
+  BEGIN
+    RAISERROR('Invalid or missing film_json',16,1); RETURN;
+  END
+  IF @version_json IS NULL OR ISJSON(@version_json) = 0
+  BEGIN
+    RAISERROR('Invalid or missing version_json',16,1); RETURN;
+  END
+
+  DECLARE @film_id UNIQUEIDENTIFIER = NEWID();
+  DECLARE @version_id UNIQUEIDENTIFIER = NEWID();
+
+  DECLARE @InsertedAssets TABLE (
+    asset_id UNIQUEIDENTIFIER,
+    file_name NVARCHAR(500),
+    asset_type NVARCHAR(100)
+  );
+
+  BEGIN TRY
+    BEGIN TRAN;
+
+    -- same validation for required fields
+    DECLARE @title_original NVARCHAR(500);
+    SELECT @title_original = title_original
+    FROM OPENJSON(@film_json) WITH (title_original NVARCHAR(500) '$.title_original');
+    IF @title_original IS NULL OR LTRIM(RTRIM(@title_original)) = ''
+      THROW 51002, 'film_json must include title_original', 1;
+
+    DECLARE @v_file_name NVARCHAR(500);
+    SELECT @v_file_name = file_name
+    FROM OPENJSON(@version_json) WITH (file_name NVARCHAR(500) '$.file_name');
+    IF @v_file_name IS NULL OR LTRIM(RTRIM(@v_file_name)) = ''
+      THROW 51003, 'version_json must include file_name', 1;
+
+    -- insert film
+    INSERT INTO dbo.films (id, title_original, title_local, alternate_titles, [year], country,
+      language_primary, director, producers, main_cast, genre,
+      duration_seconds, synopsis_short, synopsis_long, tags,
+      production_company, external_ids, rating, release_date, status, created_by)
+    SELECT
+      @film_id,
+      f.title_original,
+      f.title_local,
+      f.alternate_titles,
+      f.[year],
+      f.country,
+      f.language_primary,
+      f.director,
+      f.producers,
+      f.main_cast,
+      f.genre,
+      f.duration_seconds,
+      f.synopsis_short,
+      f.synopsis_long,
+      f.tags,
+      f.production_company,
+      f.external_ids,
+      f.rating,
+      TRY_CAST(f.release_date AS DATE),
+      ISNULL(f.status,'draft'),
+      TRY_CAST(NULLIF(f.created_by,'') AS UNIQUEIDENTIFIER)
+    FROM OPENJSON(@film_json) WITH (
+      title_original NVARCHAR(500) '$.title_original',
+      title_local NVARCHAR(500) '$.title_local',
+      alternate_titles NVARCHAR(MAX) '$.alternate_titles' AS JSON,
+      [year] INT '$.year',
+      country NVARCHAR(200) '$.country',
+      language_primary NVARCHAR(200) '$.language_primary',
+      director NVARCHAR(300) '$.director',
+      producers NVARCHAR(MAX) '$.producers' AS JSON,
+      main_cast NVARCHAR(MAX) '$.main_cast' AS JSON,
+      genre NVARCHAR(MAX) '$.genre' AS JSON,
+      duration_seconds INT '$.duration_seconds',
+      synopsis_short NVARCHAR(1000) '$.synopsis_short',
+      synopsis_long NVARCHAR(MAX) '$.synopsis_long',
+      tags NVARCHAR(MAX) '$.tags' AS JSON,
+      production_company NVARCHAR(300) '$.production_company',
+      external_ids NVARCHAR(MAX) '$.external_ids' AS JSON,
+      rating NVARCHAR(50) '$.rating',
+      release_date NVARCHAR(50) '$.release_date',
+      status NVARCHAR(50) '$.status',
+      created_by NVARCHAR(50) '$.created_by'
+    ) AS f;
+
+    -- insert version
+    INSERT INTO dbo.film_versions (
+      version_id, film_id, version_name, file_name, storage_url,
+      file_size_bytes, container, video_codec, video_bitrate, resolution,
+      aspect_ratio, framerate, duration_seconds, audio_format, audio_channels,
+      audio_track_map, subtitles, closed_captions, checksum, mezzanine, qc_status, ingest_date
+    )
+    SELECT
+      @version_id,
+      @film_id,
+      v.version_name,
+      v.file_name,
+      v.storage_url,
+      v.file_size_bytes,
+      v.container,
+      v.video_codec,
+      v.video_bitrate,
+      v.resolution,
+      v.aspect_ratio,
+      TRY_CAST(v.framerate AS DECIMAL(8,3)),
+      v.duration_seconds,
+      v.audio_format,
+      v.audio_channels,
+      v.audio_track_map,
+      v.subtitles,
+      CASE WHEN TRY_CAST(v.closed_captions AS INT) = 1 THEN 1 ELSE 0 END,
+      v.checksum,
+      CASE WHEN TRY_CAST(v.mezzanine AS INT) = 1 THEN 1 ELSE 0 END,
+      ISNULL(v.qc_status,'pending'),
+      TRY_CAST(v.ingest_date AS DATETIMEOFFSET)
+    FROM OPENJSON(@version_json) WITH (
+      version_name NVARCHAR(200) '$.version_name',
+      file_name NVARCHAR(500) '$.file_name',
+      storage_url NVARCHAR(1000) '$.storage_url',
+      file_size_bytes BIGINT '$.file_size_bytes',
+      container NVARCHAR(100) '$.container',
+      video_codec NVARCHAR(100) '$.video_codec',
+      video_bitrate BIGINT '$.video_bitrate',
+      resolution NVARCHAR(50) '$.resolution',
+      aspect_ratio NVARCHAR(50) '$.aspect_ratio',
+      framerate NVARCHAR(50) '$.framerate',
+      duration_seconds INT '$.duration_seconds',
+      audio_format NVARCHAR(100) '$.audio_format',
+      audio_channels NVARCHAR(50) '$.audio_channels',
+      audio_track_map NVARCHAR(MAX) '$.audio_track_map' AS JSON,
+      subtitles NVARCHAR(MAX) '$.subtitles' AS JSON,
+      closed_captions NVARCHAR(10) '$.closed_captions',
+      checksum NVARCHAR(128) '$.checksum',
+      mezzanine NVARCHAR(10) '$.mezzanine',
+      qc_status NVARCHAR(50) '$.qc_status',
+      ingest_date NVARCHAR(50) '$.ingest_date'
+    ) AS v;
+
+    -- Insert assets from TVP and capture ids
+    IF EXISTS (SELECT 1 FROM @assets)
+    BEGIN
+      INSERT INTO dbo.assets (
+        asset_id, film_id, asset_type, title, file_name, file_url,
+        resolution, file_size_bytes, language, checksum, usage_restrictions
+      )
+      OUTPUT inserted.asset_id, inserted.file_name, inserted.asset_type INTO @InsertedAssets
+      SELECT NEWID(), @film_id, a.asset_type, a.title, a.file_name, a.file_url,
+             a.resolution, a.file_size_bytes, a.language, a.checksum, a.usage_restrictions
+      FROM @assets AS a;
+    END
+
+    COMMIT TRAN;
+
+    SELECT CAST(@film_id AS NVARCHAR(36)) AS film_id, CAST(@version_id AS NVARCHAR(36)) AS version_id,
+           (SELECT COUNT(*) FROM @InsertedAssets) AS assets_inserted;
+    SELECT asset_id, file_name, asset_type FROM @InsertedAssets ORDER BY file_name;
+
+  END TRY
+  BEGIN CATCH
+    IF XACT_STATE() <> 0 ROLLBACK TRAN;
+    DECLARE @ErrMsg NVARCHAR(4000) = ERROR_MESSAGE();
+    DECLARE @ErrNum INT = ERROR_NUMBER();
+    RAISERROR('sp_create_film_with_version_and_assets_tvp failed: %d - %s',16,1,@ErrNum,@ErrMsg);
+    RETURN;
+  END CATCH
+END;
+GO

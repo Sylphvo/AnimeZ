@@ -1,0 +1,206 @@
+-- Schema for SQL Server: films, film_versions, assets
+-- Assumes default database. Uses NEWID() and SYSUTCDATETIME().
+
+/* USERS (tham chiếu, tạo nếu cần) */
+IF OBJECT_ID('dbo.users', 'U') IS NULL
+BEGIN
+  CREATE TABLE dbo.users (
+    id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+    username NVARCHAR(150) NOT NULL UNIQUE,
+    display_name NVARCHAR(200) NULL,
+    created_at DATETIMEOFFSET DEFAULT SYSUTCDATETIME()
+  );
+END
+GO
+
+/*******************************
+ * TABLE: films
+ *******************************/
+CREATE TABLE dbo.films (
+  id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+  title_original NVARCHAR(500) NOT NULL,
+  title_local NVARCHAR(500) NULL,
+  alternate_titles NVARCHAR(MAX) NULL,    -- JSON array or text
+  [year] INT NULL,
+  country NVARCHAR(200) NULL,
+  language_primary NVARCHAR(200) NULL,
+  other_languages NVARCHAR(MAX) NULL,     -- JSON array
+  director NVARCHAR(300) NULL,
+  producers NVARCHAR(MAX) NULL,           -- JSON array
+  main_cast NVARCHAR(MAX) NULL,           -- JSON array
+  genre NVARCHAR(MAX) NULL,               -- JSON array
+  duration_seconds INT NULL,
+  synopsis_short NVARCHAR(1000) NULL,
+  synopsis_long NVARCHAR(MAX) NULL,
+  tags NVARCHAR(MAX) NULL,                -- JSON array or comma list
+  production_company NVARCHAR(300) NULL,
+  external_ids NVARCHAR(MAX) NULL,        -- JSON object
+  rating NVARCHAR(50) NULL,
+  release_date DATE NULL,
+  status NVARCHAR(50) NOT NULL DEFAULT('draft'), -- enum enforced below
+  created_by UNIQUEIDENTIFIER NULL REFERENCES dbo.users(id),
+  created_at DATETIMEOFFSET DEFAULT SYSUTCDATETIME(),
+  updated_at DATETIMEOFFSET DEFAULT SYSUTCDATETIME()
+);
+GO
+
+-- Restrict status values
+ALTER TABLE dbo.films
+  ADD CONSTRAINT CHK_films_status CHECK (status IN ('draft','ready','released','archived'));
+GO
+
+-- Optional JSON validation (uncomment if you require valid JSON)
+ALTER TABLE dbo.films
+  ADD CONSTRAINT CHK_films_alternate_titles_isjson CHECK (
+    alternate_titles IS NULL OR ISJSON(alternate_titles) = 1
+  );
+ALTER TABLE dbo.films
+  ADD CONSTRAINT CHK_films_other_languages_isjson CHECK (
+    other_languages IS NULL OR ISJSON(other_languages) = 1
+  );
+ALTER TABLE dbo.films
+  ADD CONSTRAINT CHK_films_tags_isjson CHECK (
+    tags IS NULL OR ISJSON(tags) = 1
+  );
+ALTER TABLE dbo.films
+  ADD CONSTRAINT CHK_films_external_ids_isjson CHECK (
+    external_ids IS NULL OR ISJSON(external_ids) = 1
+  );
+GO
+
+-- Indexes for common queries
+CREATE NONCLUSTERED INDEX IX_films_title ON dbo.films(title_original, title_local);
+CREATE NONCLUSTERED INDEX IX_films_release_date ON dbo.films(release_date);
+CREATE NONCLUSTERED INDEX IX_films_director ON dbo.films(director);
+CREATE NONCLUSTERED INDEX IX_films_status ON dbo.films(status);
+GO
+
+-- Trigger: update updated_at on films
+CREATE OR ALTER TRIGGER TRG_films_UpdateUpdatedAt
+ON dbo.films
+AFTER UPDATE
+AS
+BEGIN
+  SET NOCOUNT ON;
+  UPDATE f
+  SET updated_at = SYSUTCDATETIME()
+  FROM dbo.films f
+  JOIN inserted i ON f.id = i.id;
+END;
+GO
+
+/*******************************
+ * TABLE: film_versions
+ *******************************/
+CREATE TABLE dbo.film_versions (
+  version_id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+  film_id UNIQUEIDENTIFIER NOT NULL REFERENCES dbo.films(id) ON DELETE CASCADE,
+  version_name NVARCHAR(200) NULL,
+  file_name NVARCHAR(500) NULL,
+  storage_url NVARCHAR(1000) NULL,
+  file_size_bytes BIGINT NULL,
+  container NVARCHAR(100) NULL,    -- MXF/MP4/ProRes...
+  video_codec NVARCHAR(100) NULL,
+  video_bitrate BIGINT NULL,
+  resolution NVARCHAR(50) NULL,
+  aspect_ratio NVARCHAR(50) NULL,
+  framerate DECIMAL(8,3) NULL,
+  duration_seconds INT NULL,
+  audio_format NVARCHAR(100) NULL,
+  audio_channels NVARCHAR(50) NULL,
+  audio_track_map NVARCHAR(MAX) NULL,  -- JSON
+  subtitles NVARCHAR(MAX) NULL,        -- JSON array {lang,url,format}
+  closed_captions BIT DEFAULT 0,
+  checksum NVARCHAR(128) NULL,
+  mezzanine BIT DEFAULT 0,
+  qc_status NVARCHAR(50) DEFAULT 'pending', -- enum enforced below
+  ingest_date DATETIMEOFFSET NULL,
+  created_at DATETIMEOFFSET DEFAULT SYSUTCDATETIME(),
+  updated_at DATETIMEOFFSET DEFAULT SYSUTCDATETIME()
+);
+GO
+
+-- Restrict qc_status values
+ALTER TABLE dbo.film_versions
+  ADD CONSTRAINT CHK_fv_qc_status CHECK (qc_status IN ('pending','pass','fail'));
+GO
+
+-- Optional JSON validation
+ALTER TABLE dbo.film_versions
+  ADD CONSTRAINT CHK_fv_audio_track_map_isjson CHECK (
+    audio_track_map IS NULL OR ISJSON(audio_track_map) = 1
+  );
+ALTER TABLE dbo.film_versions
+  ADD CONSTRAINT CHK_fv_subtitles_isjson CHECK (
+    subtitles IS NULL OR ISJSON(subtitles) = 1
+  );
+GO
+
+-- Indexes
+CREATE NONCLUSTERED INDEX IX_fv_film ON dbo.film_versions(film_id);
+CREATE NONCLUSTERED INDEX IX_fv_qcstatus ON dbo.film_versions(qc_status);
+CREATE NONCLUSTERED INDEX IX_fv_createdat ON dbo.film_versions(created_at);
+GO
+
+-- Trigger: update updated_at on film_versions
+CREATE OR ALTER TRIGGER TRG_fv_UpdateUpdatedAt
+ON dbo.film_versions
+AFTER UPDATE
+AS
+BEGIN
+  SET NOCOUNT ON;
+  UPDATE v
+  SET updated_at = SYSUTCDATETIME()
+  FROM dbo.film_versions v
+  JOIN inserted i ON v.version_id = i.version_id;
+END;
+GO
+
+/*******************************
+ * TABLE: assets
+ *******************************/
+CREATE TABLE dbo.assets (
+  asset_id UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
+  film_id UNIQUEIDENTIFIER NOT NULL REFERENCES dbo.films(id) ON DELETE CASCADE,
+  asset_type NVARCHAR(100) NULL,   -- poster / still / trailer / presskit / cue_sheet / other
+  title NVARCHAR(500) NULL,
+  file_name NVARCHAR(500) NULL,
+  file_url NVARCHAR(1000) NULL,
+  resolution NVARCHAR(50) NULL,
+  file_size_bytes BIGINT NULL,
+  language NVARCHAR(50) NULL,
+  checksum NVARCHAR(128) NULL,
+  usage_restrictions NVARCHAR(MAX) NULL,
+  created_at DATETIMEOFFSET DEFAULT SYSUTCDATETIME(),
+  updated_at DATETIMEOFFSET DEFAULT SYSUTCDATETIME()
+);
+GO
+
+-- Restrict asset_type values
+ALTER TABLE dbo.assets
+  ADD CONSTRAINT CHK_assets_type CHECK (
+    asset_type IS NULL OR asset_type IN ('poster','still','trailer','presskit','cue_sheet','other')
+  );
+GO
+
+-- Optional JSON validation for file_url if you use JSON for metadata
+-- ALTER TABLE dbo.assets ADD CONSTRAINT CHK_assets_json CHECK (1=1);
+
+-- Indexes
+CREATE NONCLUSTERED INDEX IX_assets_film ON dbo.assets(film_id);
+CREATE NONCLUSTERED INDEX IX_assets_type ON dbo.assets(asset_type);
+GO
+
+-- Trigger: update updated_at on assets
+CREATE OR ALTER TRIGGER TRG_assets_UpdateUpdatedAt
+ON dbo.assets
+AFTER UPDATE
+AS
+BEGIN
+  SET NOCOUNT ON;
+  UPDATE a
+  SET updated_at = SYSUTCDATETIME()
+  FROM dbo.assets a
+  JOIN inserted i ON a.asset_id = i.asset_id;
+END;
+GO

@@ -1,4 +1,4 @@
-// File: C:\Users\Cilse\source\AnimeZ.github.io\src\app\forgot-password\page.tsx
+// File: C:\Users\phuvm\source\repos\AnimeZ\src\app\forgot-password\page.tsx
 import * as entry from '../../../../src/app/forgot-password/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

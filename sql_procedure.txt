@@ -1,0 +1,43 @@
+DECLARE @film NVARCHAR(MAX) = N'{
+  "title_original":"Original Title",
+  "title_local":"Tiêu đề VN",
+  "year":2024,
+  "country":"Vietnam",
+  "language_primary":"vi",
+  "director":"Nguyen A",
+  "producers":["Prod A","Prod B"],
+  "main_cast":["Actor 1","Actor 2"],
+  "genre":["Drama"],
+  "duration_seconds":7200,
+  "synopsis_short":"Short",
+  "tags":["tag1","tag2"],
+  "production_company":"Studio X",
+  "external_ids":{"imdb":"tt1234567"},
+  "rating":"PG-13",
+  "release_date":"2024-12-01",
+  "status":"ready"
+}';
+
+DECLARE @version NVARCHAR(MAX) = N'{
+  "version_name":"Theatrical",
+  "file_name":"movie_theatrical.mxf",
+  "storage_url":"s3://bucket/movie_theatrical.mxf",
+  "file_size_bytes":123456789,
+  "container":"MXF",
+  "video_codec":"ProRes4444",
+  "resolution":"4096x2160",
+  "framerate":"24",
+  "duration_seconds":7200,
+  "audio_format":"PCM",
+  "audio_channels":"5.1",
+  "subtitles":[{"lang":"vi","url":"s3://bucket/sub_vi.srt"}],
+  "qc_status":"pending",
+  "closed_captions":0
+}';
+
+DECLARE @assets NVARCHAR(MAX) = N'[
+  {"asset_type":"poster","title":"Poster A","file_name":"poster_a.jpg","file_url":"s3://bucket/poster_a.jpg","resolution":"2000x3000"},
+  {"asset_type":"trailer","title":"Trailer 1","file_name":"trailer_1.mp4","file_url":"s3://bucket/trailer_1.mp4","resolution":"1920x1080"}
+]';
+
+EXEC dbo.sp_create_film_with_version_and_assets @film, @version, @assets;

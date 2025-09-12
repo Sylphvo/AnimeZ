@@ -37,7 +37,7 @@ interface MovieSection {
   viewAllLink?: string;
 }
 
-const MovieAdminPage = dynamic(() => import('./movie-admin'), { ssr: false })
+const MovieAdminPage = dynamic(() => import('./list/page'), { ssr: false })
 
 export default function MoviesPage() {
   const [currentBanner, setCurrentBanner] = useState(0);
